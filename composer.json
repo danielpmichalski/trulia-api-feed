@@ -1,0 +1,15 @@
+{
+    "name": "danielpmichalski/trulia-api-feed",
+    "description": "Trulia API feed generator",
+    "minimum-stability": "dev",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Daniel Michalski",
+            "email": "danielp.michalski@gmail.com"
+        }
+    ],
+    "require": {
+        "3rd-party/smarty": "v3.1.8"
+    }
+}
