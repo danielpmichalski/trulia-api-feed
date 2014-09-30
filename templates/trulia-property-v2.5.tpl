@@ -6,7 +6,7 @@
 
         <unit-number>{$location->getUnitNumber()}</unit-number>
         <street-address>{$location->getStreetAddress()}</street-address>
-        <display-address>{$location->getDisplayAddress()}</display-address>
+        <display-address>{if $location->getDisplayAddress()}yes{else}no{/if}</display-address>
         <city-name>{$location->getCityName()}</city-name>
         <zipcode>{$location->getZipcode()}</zipcode>
         <county>{$location->getCounty()}</county>
@@ -17,7 +17,7 @@
         <subdivision>{$location->getSubdivision()}</subdivision>
         <neighborhood-name>{$location->getNeighborhoodName()}</neighborhood-name>
         <neighborhood-description>{$location->getNeighborhoodDescription()}</neighborhood-description>
-        <elevation>{$location->getElevation()}</elevation>
+        <elevation>{$location->getElevation()|string_format:"%d"}</elevation>
         <longitude>{$location->getLongitude()}</longitude>
         <latitude>{$location->getLatitude()}</latitude>
         <geocode-type>{$location->getGeocodeType()}</geocode-type>
@@ -25,12 +25,12 @@
     </location>
     <details>{assign var="details" value="{$property->getDetails()}"}
 
-        <price>{$details->getPrice()}</price>
+        <price>{$details->getPrice()|string_format:"%d"}</price>
         <num-bedrooms>{$details->getNumBedrooms()}</num-bedrooms>
         <num-full-bathrooms>{$details->getNumFullBathrooms()}</num-full-bathrooms>
         <num-half-bathrooms>{$details->getNumHalfBathrooms()}</num-half-bathrooms>
         <num-bathrooms>{$details->getNumBathrooms()}</num-bathrooms>
-        <living-area-square-feet>{$details->getLivingAreaSquareFeet()}</living-area-square-feet>
+        <living-area-square-feet>{$details->getLivingAreaSquareFeet()|string_format:"%d"}</living-area-square-feet>
         <date-listed>{$details->getDateListed()}</date-listed>
         <property-type>{$details->getPropertyType()}</property-type>
         <description>{$details->getDescription()}</description>
@@ -42,7 +42,7 @@
         <year-built>{$details->getYearBuilt()}</year-built>
         <date-available>{$details->getDateAvailable()}</date-available>
         <date-sold>{$details->getDateSold()}</date-sold>
-        <sale-price>{$details->getSalePrice()}</sale-price>
+        <sale-price>{$details->getSalePrice()|string_format:"%d"}</sale-price>
     </details>
     <landing-page>{assign var="landing_page" value="{$property->getLandingPage()}"}
 
@@ -59,7 +59,7 @@
             <picture-url>{$picture->getPictureUrl()}</picture-url>
             <picture-caption>{$picture->getPictureCaption()}</picture-caption>
             <picture-description>{$picture->getPictureDescription()}</picture-description>
-            <picture-seq-number>{$picture->getPictureSeqNumber()}</picture-seq-number>
+            <picture-seq-number>{$picture->getPictureSeqNumber()|string_format:"%d"}</picture-seq-number>
         </picture>{/foreach}
 
     </pictures>
@@ -69,7 +69,7 @@
             <virtual-tour-url>{$virtual_tour->getVirtualTourUrl()}</virtual-tour-url>
             <virtual-tour-caption>{$virtual_tour->getVirtualTourCaption()}</virtual-tour-caption>
             <virtual-tour-description>{$virtual_tour->getVirtualTourDescription()}</virtual-tour-description>
-            <virtual-tour-seq-number>{$virtual_tour->getVirtualTourSeqNumber()}</virtual-tour-seq-number>
+            <virtual-tour-seq-number>{$virtual_tour->getVirtualTourSeqNumber()|string_format:"%d"}</virtual-tour-seq-number>
         </virtual-tour>{/foreach}
 
     </virtual-tours>
@@ -79,7 +79,7 @@
             <video-url>{$video->getVideoUrl()}</video-url>
             <video-caption>{$video->getVideoCaption()}</video-caption>
             <video-description>{$video->getVideoDescription()}</video-description>
-            <video-seq-number>{$video->getVideoSeqNumber()}</video-seq-number>
+            <video-seq-number>{$video->getVideoSeqNumber()|string_format:"%d"}</video-seq-number>
         </video>{/foreach}
 
     </videos>
@@ -90,7 +90,7 @@
             <end-time>{$open_home->getEndTime()}</end-time>
             <date>{$open_home->getDate()}</date>
             <details>{$open_home->getDetails()}</details>
-            <open-home-appointment-required>{$open_home->getOpenHomeAppointmentRequired()}</open-home-appointment-required>
+            <open-home-appointment-required>{if $open_home->getOpenHomeAppointmentRequired()}yes{else}no{/if}</open-home-appointment-required>
         </open-home>{/foreach}
 
     </open-homes>
@@ -99,14 +99,14 @@
         <tax>
             <tax-type>{$tax->getTaxType()}</tax-type>
             <tax-year>{$tax->getTaxYear()}</tax-year>
-            <tax-amount>{$tax->getTaxAmount()}</tax-amount>
+            <tax-amount>{$tax->getTaxAmount()|string_format:"%d"}</tax-amount>
             <tax-description>{$tax->getTaxDescription()}</tax-description>
         </tax>{/foreach}
 
     </taxes>
     <hoa-fees>{assign var="hoaFee" value="{$property->getHoaFee()}"}
 
-        <hoa-fee>{$hoaFee->getHoaFee()}</hoa-fee>
+        <hoa-fee>{$hoaFee->getHoaFee()|string_format:"%d"}</hoa-fee>
         <hoa-period>{$hoaFee->getHoaPeriod()}</hoa-period>
         <hoa-description>{$hoaFee->getHoaDescription()}</hoa-description>
     </hoa-fees>
@@ -114,7 +114,7 @@
 
         <fee>
             <fee-type>{$fee->getFeeType()}</fee-type>
-            <fee-amount>{$fee->getFeeAmount()}</fee-amount>
+            <fee-amount>{$fee->getFeeAmount()|string_format:"%d"}</fee-amount>
             <fee-period>{$fee->getFeePeriod()}</fee-period>
             <fee-description>{$fee->getFeeDescription()}</fee-description>
         </fee>{/foreach}
@@ -139,7 +139,7 @@
             <floorplan-layout-url>{$floorplan_layout->getFloorplanLayoutUrl()}</floorplan-layout-url>
             <floorplan-layout-caption>{$floorplan_layout->getFloorplanLayoutCaption()}</floorplan-layout-caption>
             <floorplan-layout-description>{$floorplan_layout->getFloorplanLayoutDescription()}</floorplan-layout-description>
-            <floorplan-layout-seq-number>{$floorplan_layout->getFloorplanLayoutSeqNumber()}</floorplan-layout-seq-number>
+            <floorplan-layout-seq-number>{$floorplan_layout->getFloorplanLayoutSeqNumber()|string_format:"%d"}</floorplan-layout-seq-number>
         </floorplan-layout>{/foreach}
 
     </floorplan-layouts>
@@ -233,7 +233,7 @@
             <builder-state-code>{$builder_address->getStateCode()}</builder-state-code>
         </builder-address>
     </builder>
-    <!-- TODO: figure out what is this about "for rental listings only" -->
+    {if $property->getListingType()->equals(ListingType::RENTAL)}
     <property-manager>{assign var="property_manager" value="{$property->getPropertyManager()}"}
 
         <property-manager-name>{$property_manager->getName()}</property-manager-name>
@@ -253,17 +253,18 @@
             </office-day>{/foreach}
 
         </property-manager-office-hours>
-    </property-manager>
+    </property-manager>{/if}
+
     <detailed-characteristics>{assign var="detailed_characteristics" value="{$property->getDetailedCharacteristics()}"}
 
         <appliances>{assign var="appliances" value="{$detailed_characteristics->getAppliances()}"}
 
-            <has-washer>{$appliances->getHasWasher()}</has-washer>
-            <has-dryer>{$appliances->getHasDryer()}</has-dryer>
-            <has-dishwasher>{$appliances->getHasDishwasher()}</has-dishwasher>
-            <has-refrigerator>{$appliances->getHasRefrigerator()}</has-refrigerator>
-            <has-disposal>{$appliances->getHasDisposal()}</has-disposal>
-            <has-microwave>{$appliances->getHasMicrowave()}</has-microwave>
+            <has-washer>{if $appliances->getHasWasher()}yes{else}no{/if}</has-washer>
+            <has-dryer>{if $appliances->getHasDryer()}yes{else}no{/if}</has-dryer>
+            <has-dishwasher>{if $appliances->getHasDishwasher()}yes{else}no{/if}</has-dishwasher>
+            <has-refrigerator>{if $appliances->getHasRefrigerator()}yes{else}no{/if}</has-refrigerator>
+            <has-disposal>{if $appliances->getHasDisposal()}yes{else}no{/if}</has-disposal>
+            <has-microwave>{if $appliances->getHasMicrowave()}yes{else}no{/if}</has-microwave>
             <range-type>{$appliances->getRangeType()}</range-type>
             <appliances-comments>{$appliances->getAppliancesComments()}</appliances-comments>
             <additional-appliances>{assign var="additional_appliances" value="{$appliances->getAdditionalAppliances()}"}
@@ -278,20 +279,20 @@
         </appliances>
         <cooling-systems>{assign var="cooling_systems" value="{$detailed_characteristics->getCoolingSystems()}"}
 
-            <has-air-conditioning>{$cooling_systems->getHasAirConditioning()}</has-air-conditioning>
-            <has-ceiling-fan>{$cooling_systems->getHasCeilingFan()}</has-ceiling-fan>
+            <has-air-conditioning>{if $cooling_systems->getHasAirConditioning()}yes{else}no{/if}</has-air-conditioning>
+            <has-ceiling-fan>{if $cooling_systems->getHasCeilingFan()}yes{else}no{/if}</has-ceiling-fan>
             <other-cooling>{$cooling_systems->getOtherCooling()}</other-cooling>
         </cooling-systems>
         <heating-systems>{assign var="heating_systems" value="{$detailed_characteristics->getHeatingSystems()}"}
 
-            <has-fireplace>{$heating_systems->getHasFireplace()}</has-fireplace>
+            <has-fireplace>{if $heating_systems->getHasFireplace()}yes{else}no{/if}</has-fireplace>
             <fireplace-type>{$heating_systems->getFireplaceType()}</fireplace-type>
             <heating-system>{$heating_systems->getHeatingSystem()}</heating-system>
             <heating-fuel>{$heating_systems->getHeatingFuel()}</heating-fuel>
         </heating-systems>
         <floor-coverings>{$detailed_characteristics->getFloorCoverings()}</floor-coverings>
-        <total-unit-parking-spaces>{$detailed_characteristics->getTotalUnitParkingSpaces()}</total-unit-parking-spaces>
-        <has-garage>{$detailed_characteristics->getHasGarage()}</has-garage>
+        <total-unit-parking-spaces>{$detailed_characteristics->getTotalUnitParkingSpaces()|string_format:"%d"}</total-unit-parking-spaces>
+        <has-garage>{if $detailed_characteristics->getHasGarage()}yes{else}no{/if}</has-garage>
         <garage-type>{$detailed_characteristics->getGarageType()}</garage-type>
         <parking-types>{assign var="parking_types" value="{$detailed_characteristics->getParkingTypes()}"}
             {foreach $parking_types as $parking_type}
@@ -299,15 +300,15 @@
             <parking-type></parking-type>{/foreach}
 
         </parking-types>
-        <has-assigned-parking-space>{$detailed_characteristics->getHasAssignedParkingSpace()}</has-assigned-parking-space>
+        <has-assigned-parking-space>{if $detailed_characteristics->getHasAssignedParkingSpace()}yes{else}no{/if}</has-assigned-parking-space>
         <parking-space-fee>{$detailed_characteristics->getParkingSpaceFee()}</parking-space-fee>
-        <assigned-parking-space-cost>{$detailed_characteristics->getAssignedParkingSpaceCost()}</assigned-parking-space-cost>
+        <assigned-parking-space-cost>{$detailed_characteristics->getAssignedParkingSpaceCost()|string_format:"%d"}</assigned-parking-space-cost>
         <parking-comment>{$detailed_characteristics->getParkingComment()}</parking-comment>
         <foundation-type>{$detailed_characteristics->getFoundationType()}</foundation-type>
         <roof-type>{$detailed_characteristics->getRoofType()}</roof-type>
         <architecture-style>{$detailed_characteristics->getArchitectureStyle()}</architecture-style>
         <exterior-type>{$detailed_characteristics->getExteriorType()}</exterior-type>
-        <room-count>{$detailed_characteristics->getRoomCount()}</room-count>
+        <room-count>{$detailed_characteristics->getRoomCount()|string_format:"%d"}</room-count>
         <rooms>{assign var="rooms" value="{$detailed_characteristics->getRooms()}"}{foreach $rooms as $room}
 
             <room>
@@ -318,46 +319,46 @@
 
         </rooms>
         <year-updated>{$detailed_characteristics->getYearUpdated()}</year-updated>
-        <total-units-in-building>{$detailed_characteristics->getTotalUnitsInBuilding()}</total-units-in-building>
-        <total-floors-in-building>{$detailed_characteristics->getTotalFloorsInBuilding()}</total-floors-in-building>
-        <num-floors-in-unit>{$detailed_characteristics->getNumFloorsInUnit()}</num-floors-in-unit>
-        <has-attic>{$detailed_characteristics->getHasAttic()}</has-attic>
-        <has-balcony>{$detailed_characteristics->getHasBalcony()}</has-balcony>
-        <has-barbeque-area>{$detailed_characteristics->getHasBarbequeArea()}</has-barbeque-area>
-        <has-basement>{$detailed_characteristics->getHasBasement()}</has-basement>
-        <has-cable-satellite>{$detailed_characteristics->getHasCableSatellite()}</has-cable-satellite>
-        <has-courtyard>{$detailed_characteristics->getHasCourtyard()}</has-courtyard>
-        <has-deck>{$detailed_characteristics->getHasDeck()}</has-deck>
-        <has-disabled-access>{$detailed_characteristics->getHasDisabledAccess()}</has-disabled-access>
-        <has-dock>{$detailed_characteristics->getHasDock()}</has-dock>
-        <has-doublepane-windows>{$detailed_characteristics->getHasDoublepaneWindows()}</has-doublepane-windows>
-        <has-garden>{$detailed_characteristics->getHasGarden()}</has-garden>
-        <has-gated-entry>{$detailed_characteristics->getHasGatedEntry()}</has-gated-entry>
-        <has-greenhouse>{$detailed_characteristics->getHasGreenhouse()}</has-greenhouse>
-        <has-handrails>{$detailed_characteristics->getHasHandrails()}</has-handrails>
-        <has-hot-tub-spa>{$detailed_characteristics->getHasHotTubSpa()}</has-hot-tub-spa>
-        <has-intercom>{$detailed_characteristics->getHasIntercom()}</has-intercom>
-        <has-jetted-bath-tub>{$detailed_characteristics->getHasJettedBathTub()}</has-jetted-bath-tub>
-        <has-lawn>{$detailed_characteristics->getHasLawn()}</has-lawn>
-        <has-mother-in-law>{$detailed_characteristics->getHasMotherInLaw()}</has-mother-in-law>
-        <has-patio>{$detailed_characteristics->getHasPatio()}</has-patio>
-        <has-pond>{$detailed_characteristics->getHasPond()}</has-pond>
-        <has-pool>{$detailed_characteristics->getHasPool()}</has-pool>
-        <has-porch>{$detailed_characteristics->getHasPorch()}</has-porch>
-        <has-private-balcony>{$detailed_characteristics->getHasPrivateBalcony()}</has-private-balcony>
-        <has-private-patio>{$detailed_characteristics->getHasPrivatePatio()}</has-private-patio>
-        <has-rv-parking>{$detailed_characteristics->getHasRvParking()}</has-rv-parking>
-        <has-sauna>{$detailed_characteristics->getHasSauna()}</has-sauna>
-        <has-security-system>{$detailed_characteristics->getHasSecuritySystem()}</has-security-system>
-        <has-skylight>{$detailed_characteristics->getHasSkylight()}</has-skylight>
-        <has-sportscourt>{$detailed_characteristics->getHasSportscourt()}</has-sportscourt>
-        <has-sprinkler-system>{$detailed_characteristics->getHasSprinklerSystem()}</has-sprinkler-system>
-        <has-terrace>{$detailed_characteristics->getHasTerrace()}</has-terrace>
-        <has-vaulted-ceiling>{$detailed_characteristics->getHasVaultedCeiling()}</has-vaulted-ceiling>
-        <has-view>{$detailed_characteristics->getHasView()}</has-view>
-        <has-washer-dryer-hookup>{$detailed_characteristics->getHasWasherDryerHookup()}</has-washer-dryer-hookup>
-        <has-wet-bar>{$detailed_characteristics->getHasWetBar()}</has-wet-bar>
-        <has-window-coverings>{$detailed_characteristics->getHasWindowCoverings()}</has-window-coverings>
+        <total-units-in-building>{$detailed_characteristics->getTotalUnitsInBuilding()|string_format:"%d"}</total-units-in-building>
+        <total-floors-in-building>{$detailed_characteristics->getTotalFloorsInBuilding()|string_format:"%d"}</total-floors-in-building>
+        <num-floors-in-unit>{$detailed_characteristics->getNumFloorsInUnit()|string_format:"%d"}</num-floors-in-unit>
+        <has-attic>{if $detailed_characteristics->getHasAttic()}yes{else}no{/if}</has-attic>
+        <has-balcony>{if $detailed_characteristics->getHasBalcony()}yes{else}no{/if}</has-balcony>
+        <has-barbeque-area>{if $detailed_characteristics->getHasBarbequeArea()}yes{else}no{/if}</has-barbeque-area>
+        <has-basement>{if $detailed_characteristics->getHasBasement()}yes{else}no{/if}</has-basement>
+        <has-cable-satellite>{if $detailed_characteristics->getHasCableSatellite()}yes{else}no{/if}</has-cable-satellite>
+        <has-courtyard>{if $detailed_characteristics->getHasCourtyard()}yes{else}no{/if}</has-courtyard>
+        <has-deck>{if $detailed_characteristics->getHasDeck()}yes{else}no{/if}</has-deck>
+        <has-disabled-access>{if $detailed_characteristics->getHasDisabledAccess()}yes{else}no{/if}</has-disabled-access>
+        <has-dock>{if $detailed_characteristics->getHasDock()}yes{else}no{/if}</has-dock>
+        <has-doublepane-windows>{if $detailed_characteristics->getHasDoublepaneWindows()}yes{else}no{/if}</has-doublepane-windows>
+        <has-garden>{if $detailed_characteristics->getHasGarden()}yes{else}no{/if}</has-garden>
+        <has-gated-entry>{if $detailed_characteristics->getHasGatedEntry()}yes{else}no{/if}</has-gated-entry>
+        <has-greenhouse>{if $detailed_characteristics->getHasGreenhouse()}yes{else}no{/if}</has-greenhouse>
+        <has-handrails>{if $detailed_characteristics->getHasHandrails()}yes{else}no{/if}</has-handrails>
+        <has-hot-tub-spa>{if $detailed_characteristics->getHasHotTubSpa()}yes{else}no{/if}</has-hot-tub-spa>
+        <has-intercom>{if $detailed_characteristics->getHasIntercom()}yes{else}no{/if}</has-intercom>
+        <has-jetted-bath-tub>{if $detailed_characteristics->getHasJettedBathTub()}yes{else}no{/if}</has-jetted-bath-tub>
+        <has-lawn>{if $detailed_characteristics->getHasLawn()}yes{else}no{/if}</has-lawn>
+        <has-mother-in-law>{if $detailed_characteristics->getHasMotherInLaw()}yes{else}no{/if}</has-mother-in-law>
+        <has-patio>{if $detailed_characteristics->getHasPatio()}yes{else}no{/if}</has-patio>
+        <has-pond>{if $detailed_characteristics->getHasPond()}yes{else}no{/if}</has-pond>
+        <has-pool>{if $detailed_characteristics->getHasPool()}yes{else}no{/if}</has-pool>
+        <has-porch>{if $detailed_characteristics->getHasPorch()}yes{else}no{/if}</has-porch>
+        <has-private-balcony>{if $detailed_characteristics->getHasPrivateBalcony()}yes{else}no{/if}</has-private-balcony>
+        <has-private-patio>{if $detailed_characteristics->getHasPrivatePatio()}yes{else}no{/if}</has-private-patio>
+        <has-rv-parking>{if $detailed_characteristics->getHasRvParking()}yes{else}no{/if}</has-rv-parking>
+        <has-sauna>{if $detailed_characteristics->getHasSauna()}yes{else}no{/if}</has-sauna>
+        <has-security-system>{if $detailed_characteristics->getHasSecuritySystem()}yes{else}no{/if}</has-security-system>
+        <has-skylight>{if $detailed_characteristics->getHasSkylight()}yes{else}no{/if}</has-skylight>
+        <has-sportscourt>{if $detailed_characteristics->getHasSportscourt()}yes{else}no{/if}</has-sportscourt>
+        <has-sprinkler-system>{if $detailed_characteristics->getHasSprinklerSystem()}yes{else}no{/if}</has-sprinkler-system>
+        <has-terrace>{if $detailed_characteristics->getHasTerrace()}yes{else}no{/if}</has-terrace>
+        <has-vaulted-ceiling>{if $detailed_characteristics->getHasVaultedCeiling()}yes{else}no{/if}</has-vaulted-ceiling>
+        <has-view>{if $detailed_characteristics->getHasView()}yes{else}no{/if}</has-view>
+        <has-washer-dryer-hookup>{if $detailed_characteristics->getHasWasherDryerHookup()}yes{else}no{/if}</has-washer-dryer-hookup>
+        <has-wet-bar>{if $detailed_characteristics->getHasWetBar()}yes{else}no{/if}</has-wet-bar>
+        <has-window-coverings>{if $detailed_characteristics->getHasWindowCoverings()}yes{else}no{/if}</has-window-coverings>
         <building-has-concierge>{$detailed_characteristics->getBuildingHasConcierge()}</building-has-concierge>
         <building-has-doorman>{$detailed_characteristics->getBuildingHasDoorman()}</building-has-doorman>
         <building-has-elevator>{$detailed_characteristics->getBuildingHasElevator()}</building-has-elevator>
@@ -374,25 +375,25 @@
 
         </other-amenities>
     </detailed-characteristics>
-    <!-- TODO: Figure out what to do about that!!! (for rental listings only)-->
+    {if $property->getListingType()->equals(ListingType::RENTAL)}
     <rental-terms>{assign var="rental_terms" value="{$property->getRentalTerms()}"}
 
         <price-term>{$rental_terms->getPriceTerm()}</price-term>
         <rental-type>{$rental_terms->getRentalType()}</rental-type>
         <lease-type>{$rental_terms->getLeaseType()}</lease-type>
-        <lease-min-length-months>{$rental_terms->getLeaseMinLengthMonths()}</lease-min-length-months>
-        <lease-max-length-months>{$rental_terms->getLeaseMaxLengthMonths()}</lease-max-length-months>
+        <lease-min-length-months>{$rental_terms->getLeaseMinLengthMonths()|string_format:"%d"}</lease-min-length-months>
+        <lease-max-length-months>{$rental_terms->getLeaseMaxLengthMonths()|string_format:"%d"}</lease-max-length-months>
         <lease-periods>{assign var="lease_periods" value="{$rental_terms->getLeasePeriods()}"}{foreach $lease_periods as $lease_period}
 
-            <lease-period>{$lease_period}</lease-period>{/foreach}
+            <lease-period>{$lease_period|string_format:"%d"}</lease-period>{/foreach}
 
         </lease-periods>
         <lease-details>{$rental_terms->getLeaseDetails()}</lease-details>
-        <security-deposit>{$rental_terms->getSecurityDeposit()}</security-deposit>
+        <security-deposit>{$rental_terms->getSecurityDeposit()|string_format:"%d"}</security-deposit>
         <security-deposit-description>{$rental_terms->getSecurityDepositDescription()}</security-deposit-description>
-        <application-fee>{$rental_terms->getApplicationFee()}</application-fee>
+        <application-fee>{$rental_terms->getApplicationFee()|string_format:"%d"}</application-fee>
         <application-fee-description>{$rental_terms->getApplicationFeeDescription()}</application-fee-description>
-        <credit-cards-accepted>{$rental_terms->getCreditCardsAccepted()}</credit-cards-accepted>
+        <credit-cards-accepted>{if $rental_terms->getCreditCardsAccepted()}yes{else}no{/if}</credit-cards-accepted>
         <credit-cards>{assign var="credit_cards" value="{$rental_terms->getCreditCards()}"}{foreach $credit_cards as $credit_card}
 
             <credit-card>{$credit_card}</credit-card>{/foreach}
@@ -400,14 +401,14 @@
         </credit-cards>
         <pets>{assign var="pets" value="{$rental_terms->getPets()}"}
 
-            <small-dogs-allowed>{$pets->getSmallDogsAllowed()}</small-dogs-allowed>
-            <large-dogs-allowed>{$pets->getLargeDogsAllowed()}</large-dogs-allowed>
-            <cats-allowed>{$pets->getCatsAllowed()}</cats-allowed>
-            <pet-other-allowed>{$pets->getPetOtherAllowed()}</pet-other-allowed>
-            <max-pets>{$pets->getMaxPets()}</max-pets>
-            <pet-deposit>{$pets->getPetDeposit()}</pet-deposit>
-            <pet-fee>{$pets->getPetFee()}</pet-fee>
-            <pet-rent>{$pets->getPetRent()}</pet-rent>
+            <small-dogs-allowed>{if $pets->getSmallDogsAllowed()}yes{else}no{/if}</small-dogs-allowed>
+            <large-dogs-allowed>{if $pets->getLargeDogsAllowed()}yes{else}no{/if}</large-dogs-allowed>
+            <cats-allowed>{if $pets->getCatsAllowed()}yes{else}no{/if}</cats-allowed>
+            <pet-other-allowed>{if $pets->getPetOtherAllowed()}yes{else}no{/if}</pet-other-allowed>
+            <max-pets>{$pets->getMaxPets()|string_format:"%d"}</max-pets>
+            <pet-deposit>{$pets->getPetDeposit()|string_format:"%d"}</pet-deposit>
+            <pet-fee>{$pets->getPetFee()|string_format:"%d"}</pet-fee>
+            <pet-rent>{$pets->getPetRent()|string_format:"%d"}</pet-rent>
             <pet-weight>{$pets->getPetWeight()}</pet-weight>
             <pet-comments>{assign var="pet_comments" value="{$pets->getPetComments()}"}{foreach $pet_comments as $pet_comment}
 
@@ -417,19 +418,19 @@
         </pets>
         <utilities-included>{assign var="utilities_included" value="{$rental_terms->getUtilitiesIncluded()}"}
 
-            <landlord-pays-aircon>{$utilities_included->getLandlordPaysAircon()}</landlord-pays-aircon>
-            <landlord-pays-broadbandinternet>{$utilities_included->getLandlordPaysBroadbandinternet()}</landlord-pays-broadbandinternet>
-            <landlord-pays-cable>{$utilities_included->getLandlordPaysCable()}</landlord-pays-cable>
-            <landlord-pays-electric>{$utilities_included->getLandlordPaysElectric()}</landlord-pays-electric>
-            <landlord-pays-gas>{$utilities_included->getLandlordPaysGas()}</landlord-pays-gas>
-            <landlord-pays-heat>{$utilities_included->getLandlordPaysHeat()}</landlord-pays-heat>
-            <landlord-pays-hotwater>{$utilities_included->getLandlordPaysHotwater()}</landlord-pays-hotwater>
-            <landlord-pays-satellite>{$utilities_included->getLandlordPaysSatellite()}</landlord-pays-satellite>
-            <landlord-pays-sewer>{$utilities_included->getLandlordPaysSewer()}</landlord-pays-sewer>
-            <landlord-pays-telephone>{$utilities_included->getLandlordPaysTelephone()}</landlord-pays-telephone>
-            <landlord-pays-trash>{$utilities_included->getLandlordPaysTrash()}</landlord-pays-trash>
-            <landlord-pays-water>{$utilities_included->getLandlordPaysWater()}</landlord-pays-water>
-            <landlord-utilities-portion-included>{$utilities_included->getLandlordUtilitiesPortionIncluded()}</landlord-utilities-portion-included>
+            <landlord-pays-aircon>{if $utilities_included->getLandlordPaysAircon()}yes{else}no{/if}</landlord-pays-aircon>
+            <landlord-pays-broadbandinternet>{if $utilities_included->getLandlordPaysBroadbandinternet()}yes{else}no{/if}</landlord-pays-broadbandinternet>
+            <landlord-pays-cable>{if $utilities_included->getLandlordPaysCable()}yes{else}no{/if}</landlord-pays-cable>
+            <landlord-pays-electric>{if $utilities_included->getLandlordPaysElectric()}yes{else}no{/if}</landlord-pays-electric>
+            <landlord-pays-gas>{if $utilities_included->getLandlordPaysGas()}yes{else}no{/if}</landlord-pays-gas>
+            <landlord-pays-heat>{if $utilities_included->getLandlordPaysHeat()}yes{else}no{/if}</landlord-pays-heat>
+            <landlord-pays-hotwater>{if $utilities_included->getLandlordPaysHotwater()}yes{else}no{/if}</landlord-pays-hotwater>
+            <landlord-pays-satellite>{if $utilities_included->getLandlordPaysSatellite()}yes{else}no{/if}</landlord-pays-satellite>
+            <landlord-pays-sewer>{if $utilities_included->getLandlordPaysSewer()}yes{else}no{/if}</landlord-pays-sewer>
+            <landlord-pays-telephone>{if $utilities_included->getLandlordPaysTelephone()}yes{else}no{/if}</landlord-pays-telephone>
+            <landlord-pays-trash>{if $utilities_included->getLandlordPaysTrash()}yes{else}no{/if}</landlord-pays-trash>
+            <landlord-pays-water>{if $utilities_included->getLandlordPaysWater()}yes{else}no{/if}</landlord-pays-water>
+            <landlord-utilities-portion-included>{if $utilities_included->getLandlordUtilitiesPortionIncluded()}yes{else}no{/if}</landlord-utilities-portion-included>
             <utilities-comments>{assign var="utilities_comments" value="{$utilities_included->getUtilitiesComments()}"}
                 {foreach $utilities_comments as $utilities_comment}
 
@@ -437,17 +438,18 @@
 
             </utilities-comments>
         </utilities-included>
-        <property-manager-on-site>{$rental_terms->getPropertyManagerOnSite()}</property-manager-on-site>
-        <rent-control>{$rental_terms->getRentControl()}</rent-control>
-        <subletting-allowed>{$rental_terms->getSublettingAllowed()}</subletting-allowed>
-        <rental-broker-fee>{$rental_terms->getRentalBrokerFee()}</rental-broker-fee>
-        <rental-broker-fee-amount>{$rental_terms->getRentalBrokerFeeAmount()}</rental-broker-fee-amount>
-    </rental-terms>
+        <property-manager-on-site>{if $rental_terms->getPropertyManagerOnSite()}yes{else}no{/if}</property-manager-on-site>
+        <rent-control>{if $rental_terms->getRentControl()}yes{else}no{/if}</rent-control>
+        <subletting-allowed>{if $rental_terms->getSublettingAllowed()}yes{else}no{/if}</subletting-allowed>
+        <rental-broker-fee>{if $rental_terms->getRentalBrokerFee()}yes{else}no{/if}</rental-broker-fee>
+        <rental-broker-fee-amount>{$rental_terms->getRentalBrokerFeeAmount()|string_format:"%d"}</rental-broker-fee-amount>
+    </rental-terms>{/if}
+
     <advertise-with-us>{assign var="advertise" value="{$property->getAdvertiseWithUs()}"}
 
         <channel>{$advertise->getChannel()}</channel>
-        <featured>{$advertise->getFeatured()}</featured>
-        <branded>{$advertise->getBranded()}</branded>
+        <featured>{if $advertise->getFeatured()}yes{else}no{/if}</featured>
+        <branded>{if $advertise->getBranded()}yes{else}no{/if}</branded>
         <branded-logo-url>{$advertise->getBrandedLogoUrl()}</branded-logo-url>
     </advertise-with-us>
 </property>

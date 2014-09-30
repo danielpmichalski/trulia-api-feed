@@ -15,4 +15,8 @@ abstract class Enum {
     public function __toString() {
         return "" . $this->getText();
     }
+
+    public function equals($value) {
+        return $this->value == $value;
+    }
 }
