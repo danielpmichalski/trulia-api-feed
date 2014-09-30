@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class RentalType implements Enum {
+class RentalType extends Enum {
     const STANDARD = 1;
     const CORPORATE = 2;
     const SENIOR = 3;
@@ -17,34 +17,20 @@ class RentalType implements Enum {
     const VACATION = 13;
     const OTHER = 14;
 
-    private static $values = array(
-        RentalType::STANDARD => 'Standard',
-        RentalType::CORPORATE => 'Corporate',
-        RentalType::SENIOR => 'Senior',
-        RentalType::MILITARY => 'Military',
-        RentalType::CAMPUS => 'Campus',
-        RentalType::MARKET_RATE_APT => 'market rate apt',
-        RentalType::CONDOMINIUM => 'condominium',
-        RentalType::COOPERATIVE => 'cooperative',
-        RentalType::ASSISTED_LIVING => 'assisted living',
-        RentalType::SUBSIDIZED => 'subsidized',
-        RentalType::NURSING_HOME => 'nursing home',
-        RentalType::STUDENT => 'student',
-        RentalType::VACATION => 'vacation',
-        RentalType::OTHER => 'other'
+    protected $values = array(
+        self::STANDARD => 'Standard',
+        self::CORPORATE => 'Corporate',
+        self::SENIOR => 'Senior',
+        self::MILITARY => 'Military',
+        self::CAMPUS => 'Campus',
+        self::MARKET_RATE_APT => 'market rate apt',
+        self::CONDOMINIUM => 'condominium',
+        self::COOPERATIVE => 'cooperative',
+        self::ASSISTED_LIVING => 'assisted living',
+        self::SUBSIDIZED => 'subsidized',
+        self::NURSING_HOME => 'nursing home',
+        self::STUDENT => 'student',
+        self::VACATION => 'vacation',
+        self::OTHER => 'other'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return RentalType::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
-} 
+}

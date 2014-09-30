@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class PropertyType implements Enum {
+class PropertyType extends Enum {
     const APARTMENT_CONDO_TOWNHOUSE = 1;
     const CONDO = 2;
     const TOWNHOUSE = 3;
@@ -17,34 +17,20 @@ class PropertyType implements Enum {
     const LOT_LAND = 13;
     const SINGLE_FAMILY_HOME = 14;
 
-    private static $values = array(
-        PropertyType::APARTMENT_CONDO_TOWNHOUSE => 'apartment/condo/townhouse',
-        PropertyType::CONDO => 'condo',
-        PropertyType::TOWNHOUSE => 'townhouse',
-        PropertyType::COOP => 'coop',
-        PropertyType::APARTMENT => 'apartment',
-        PropertyType::LOFT => 'loft',
-        PropertyType::TIC => 'tic',
-        PropertyType::MOBILE_MANUFACTURED => 'mobile/manufactured',
-        PropertyType::FARM_RANCH => 'farm/ranch',
-        PropertyType::MULTI_FAMILY => 'multi-family',
-        PropertyType::INCOME_INVESTMENT => 'income/investment',
-        PropertyType::HOUSEBOAT => 'houseboat',
-        PropertyType::LOT_LAND => 'lot/land',
-        PropertyType::SINGLE_FAMILY_HOME => 'single-family home'
+    protected $values = array(
+        self::APARTMENT_CONDO_TOWNHOUSE => 'apartment/condo/townhouse',
+        self::CONDO => 'condo',
+        self::TOWNHOUSE => 'townhouse',
+        self::COOP => 'coop',
+        self::APARTMENT => 'apartment',
+        self::LOFT => 'loft',
+        self::TIC => 'tic',
+        self::MOBILE_MANUFACTURED => 'mobile/manufactured',
+        self::FARM_RANCH => 'farm/ranch',
+        self::MULTI_FAMILY => 'multi-family',
+        self::INCOME_INVESTMENT => 'income/investment',
+        self::HOUSEBOAT => 'houseboat',
+        self::LOT_LAND => 'lot/land',
+        self::SINGLE_FAMILY_HOME => 'single-family home'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return PropertyType::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
-} 
+}

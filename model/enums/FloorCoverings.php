@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class FloorCoverings implements Enum {
+class FloorCoverings extends Enum {
     const CARPET = 1;
     const HARDWOOD = 2;
     const TILE = 3;
@@ -12,29 +12,15 @@ class FloorCoverings implements Enum {
     const MARBLE = 8;
     const OTHER = 9;
 
-    private static $values = array(
-        FloorCoverings::CARPET => 'Carpet',
-        FloorCoverings::HARDWOOD => 'Hardwood',
-        FloorCoverings::TILE => 'Tile',
-        FloorCoverings::VINYL => 'Vinyl',
-        FloorCoverings::CONCRETE => 'Concrete',
-        FloorCoverings::LINOLEUM => 'Linoleum',
-        FloorCoverings::LAMINATE => 'Laminate',
-        FloorCoverings::MARBLE => 'Marble',
-        FloorCoverings::OTHER => 'Other'
+    protected $values = array(
+        self::CARPET => 'Carpet',
+        self::HARDWOOD => 'Hardwood',
+        self::TILE => 'Tile',
+        self::VINYL => 'Vinyl',
+        self::CONCRETE => 'Concrete',
+        self::LINOLEUM => 'Linoleum',
+        self::LAMINATE => 'Laminate',
+        self::MARBLE => 'Marble',
+        self::OTHER => 'Other'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return FloorCoverings::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
 }

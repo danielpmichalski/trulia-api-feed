@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class ExteriorType implements Enum {
+class ExteriorType extends Enum {
     const ADOBE = 1;
     const ASBESTOS_SHINGLE = 2;
     const BRICK = 3;
@@ -20,37 +20,23 @@ class ExteriorType implements Enum {
     const TILE = 16;
     const WOOD = 17;
 
-    private static $values = array(
-        ExteriorType::ADOBE => 'Adobe',
-        ExteriorType::ASBESTOS_SHINGLE => 'Asbestos Shingle',
-        ExteriorType::BRICK => 'Brick',
-        ExteriorType::BRICK_VENEER => 'Brick Veneer',
-        ExteriorType::BLOCK => 'Block',
-        ExteriorType::CONCRETE => 'Concrete',
-        ExteriorType::CONCRETE_BLOCK => 'Concrete Block',
-        ExteriorType::GLASS => 'Glass',
-        ExteriorType::LOG => 'Log',
-        ExteriorType::MARBLE => 'Marble',
-        ExteriorType::MASONRY => 'Masonry',
-        ExteriorType::METAL => 'Metal',
-        ExteriorType::OTHER => 'Other',
-        ExteriorType::ROCK_STONE => 'Rock/Stone',
-        ExteriorType::STUCCO => 'Stucco',
-        ExteriorType::TILE => 'Tile',
-        ExteriorType::WOOD => 'Wood'
+    protected $values = array(
+        self::ADOBE => 'Adobe',
+        self::ASBESTOS_SHINGLE => 'Asbestos Shingle',
+        self::BRICK => 'Brick',
+        self::BRICK_VENEER => 'Brick Veneer',
+        self::BLOCK => 'Block',
+        self::CONCRETE => 'Concrete',
+        self::CONCRETE_BLOCK => 'Concrete Block',
+        self::GLASS => 'Glass',
+        self::LOG => 'Log',
+        self::MARBLE => 'Marble',
+        self::MASONRY => 'Masonry',
+        self::METAL => 'Metal',
+        self::OTHER => 'Other',
+        self::ROCK_STONE => 'Rock/Stone',
+        self::STUCCO => 'Stucco',
+        self::TILE => 'Tile',
+        self::WOOD => 'Wood'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return ExteriorType::$values[$this->value];
-    }
-
-    function __toString() {
-        return $this->getText();
-    }
 }

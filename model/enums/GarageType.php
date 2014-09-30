@@ -1,26 +1,12 @@
 <?php
 include_once('Enum.php');
 
-class GarageType implements Enum {
+class GarageType extends Enum {
     const ATTACHED = 1;
     const DETACHED = 2;
 
-    private static $values = array(
-        GarageType::ATTACHED => 'attached',
-        GarageType::DETACHED => 'detached'
+    protected $values = array(
+        self::ATTACHED => 'attached',
+        self::DETACHED => 'detached'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return GarageType::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
 }

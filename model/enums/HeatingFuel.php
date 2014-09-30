@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class HeatingFuel implements Enum {
+class HeatingFuel extends Enum {
     const COAL = 1;
     const OIL = 2;
     const GAS = 3;
@@ -13,30 +13,16 @@ class HeatingFuel implements Enum {
     const OTHER = 9;
     const NONE = 10;
 
-    private static $values = array(
-        HeatingFuel::COAL => 'coal',
-        HeatingFuel::OIL => 'oil',
-        HeatingFuel::GAS => 'gas',
-        HeatingFuel::ELECTRIC => 'electric',
-        HeatingFuel::PROPANE => 'propane',
-        HeatingFuel::BUTANE => 'butane',
-        HeatingFuel::SOLAR => 'solar',
-        HeatingFuel::WOODPELLET => 'woodpellet',
-        HeatingFuel::OTHER => 'other',
-        HeatingFuel::NONE => 'none'
+    protected $values = array(
+        self::COAL => 'coal',
+        self::OIL => 'oil',
+        self::GAS => 'gas',
+        self::ELECTRIC => 'electric',
+        self::PROPANE => 'propane',
+        self::BUTANE => 'butane',
+        self::SOLAR => 'solar',
+        self::WOODPELLET => 'woodpellet',
+        self::OTHER => 'other',
+        self::NONE => 'none'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return HeatingFuel::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
-} 
+}

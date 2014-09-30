@@ -1,7 +1,7 @@
 <?php
 include_once('Enum.php');
 
-class ArchitectureStyle implements Enum {
+class ArchitectureStyle extends Enum {
     const A_FRAME = 1;
     const BUNGALOW = 2;
     const COLONIAL = 3;
@@ -20,37 +20,23 @@ class ArchitectureStyle implements Enum {
     const SPANISH = 16;
     const VICTORIAN = 17;
 
-    private static $values = array(
-        ArchitectureStyle::A_FRAME => 'A-Frame',
-        ArchitectureStyle::BUNGALOW => 'Bungalow',
-        ArchitectureStyle::COLONIAL => 'Colonial',
-        ArchitectureStyle::CONTEMPORARY => 'Contemporary',
-        ArchitectureStyle::COTTAGE => 'Cottage',
-        ArchitectureStyle::CUSTOM => 'Custom',
-        ArchitectureStyle::DOME => 'Dome',
-        ArchitectureStyle::HIGH_RISE => 'High-rise',
-        ArchitectureStyle::HISTORICAL => 'Historical',
-        ArchitectureStyle::LOG_CABIN => 'Log Cabin',
-        ArchitectureStyle::MANSION => 'Mansion',
-        ArchitectureStyle::MEDITERRANEAN => 'Mediterranean',
-        ArchitectureStyle::PREFAB_MODULAR => 'Prefab/Modular',
-        ArchitectureStyle::RANCH => 'Ranch',
-        ArchitectureStyle::SPANISH => 'Spanish',
-        ArchitectureStyle::VICTORIAN => 'Victorian',
-        ArchitectureStyle::OTHER => 'Other'
+    protected $values = array(
+        self::A_FRAME => 'A-Frame',
+        self::BUNGALOW => 'Bungalow',
+        self::COLONIAL => 'Colonial',
+        self::CONTEMPORARY => 'Contemporary',
+        self::COTTAGE => 'Cottage',
+        self::CUSTOM => 'Custom',
+        self::DOME => 'Dome',
+        self::HIGH_RISE => 'High-rise',
+        self::HISTORICAL => 'Historical',
+        self::LOG_CABIN => 'Log Cabin',
+        self::MANSION => 'Mansion',
+        self::MEDITERRANEAN => 'Mediterranean',
+        self::PREFAB_MODULAR => 'Prefab/Modular',
+        self::RANCH => 'Ranch',
+        self::SPANISH => 'Spanish',
+        self::VICTORIAN => 'Victorian',
+        self::OTHER => 'Other'
     );
-
-    private $value;
-
-    public function __construct($value) {
-        $this->value = $value;
-    }
-
-    public function getText() {
-        return self::$values[$this->value];
-    }
-
-    public function __toString() {
-        return $this->getText();
-    }
 }
