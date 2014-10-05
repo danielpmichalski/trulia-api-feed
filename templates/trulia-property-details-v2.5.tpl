@@ -1,0 +1,20 @@
+<details>
+    <price>{$details->getPrice()|string_format:"%d"}</price>
+    <num-bedrooms>{$details->getNumBedrooms()}</num-bedrooms>
+    <num-full-bathrooms>{$details->getNumFullBathrooms()}</num-full-bathrooms>
+    <num-half-bathrooms>{$details->getNumHalfBathrooms()}</num-half-bathrooms>
+    <num-bathrooms>{$details->getNumBathrooms()}</num-bathrooms>
+    <living-area-square-feet>{$details->getLivingAreaSquareFeet()|string_format:"%d"}</living-area-square-feet>
+    <date-listed>{$details->getDateListed()}</date-listed>
+    <property-type>{$details->getPropertyType()}</property-type>
+    <description>{$details->getDescription()}</description>
+    <mlsId>{$details->getMlsId()}</mlsId>
+    <mlsName>{$details->getMlsName()}</mlsName>
+    <provider-listingid>{$details->getProviderListingId()}</provider-listingid>
+    <lot-size>{$details->getLotSize()}</lot-size>
+    <listing-title>{$details->getListingTitle()}</listing-title>
+    <year-built>{$details->getYearBuilt()}</year-built>
+    <date-available>{$details->getDateAvailable()}</date-available>
+    <date-sold>{$details->getDateSold()}</date-sold>
+    <sale-price>{$details->getSalePrice()|string_format:"%d"}</sale-price>
+</details>

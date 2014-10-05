@@ -1,0 +1,20 @@
+<location>
+    <unit-number>{$location->getUnitNumber()}</unit-number>
+    <street-address>{$location->getStreetAddress()}</street-address>
+    <display-address>{if $location->getDisplayAddress()}yes{else}no{/if}</display-address>
+    <city-name>{$location->getCityName()}</city-name>
+    <zipcode>{$location->getZipcode()}</zipcode>
+    <county>{$location->getCounty()}</county>
+    <state-code>{$location->getStateCode()}</state-code>
+    <street-intersection>{$location->getStreetIntersection()}</street-intersection>
+    <parcel-id>{$location->getParcelId()}</parcel-id>
+    <building-name>{$location->getBuildingName()}</building-name>
+    <subdivision>{$location->getSubdivision()}</subdivision>
+    <neighborhood-name>{$location->getNeighborhoodName()}</neighborhood-name>
+    <neighborhood-description>{$location->getNeighborhoodDescription()}</neighborhood-description>
+    <elevation>{$location->getElevation()|string_format:"%d"}</elevation>
+    <longitude>{$location->getLongitude()}</longitude>
+    <latitude>{$location->getLatitude()}</latitude>
+    <geocode-type>{$location->getGeocodeType()}</geocode-type>
+    <directions>{$location->getDirections()}</directions>
+</location>
