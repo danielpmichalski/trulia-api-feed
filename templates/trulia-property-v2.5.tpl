@@ -59,13 +59,13 @@
 {include file="trulia-property-franchise-v2.5.tpl" property=$franchise assign="franchise"}{$franchise|indent:4:" "}
 {assign var="builder" value="{$property->getBuilder()}"}
 {include file="trulia-property-builder-v2.5.tpl" property=$builder assign="builder"}{$builder|indent:4:" "}
-{if $property->getListingType()->equals(ListingType::RENTAL)}
+{if $property->getListingType() != null && $property->getListingType()->equals(ListingType::RENTAL)}
 {assign var="property_manager" value="{$property->getPropertyManager()}"}
 {include file="trulia-property-property-manager-v2.5.tpl" property=$property_manager assign="property_manager"}{$property_manager|indent:4:" "}
 {/if}
 {assign var="detailed_characteristics" value="{$property->getDetailedCharacteristics()}"}
 {include file="trulia-property-detailed-characteristics-v2.5.tpl" property=$detailed_characteristics assign="detailed_characteristics"}{$detailed_characteristics|indent:4:" "}
-{if $property->getListingType()->equals(ListingType::RENTAL)}
+{if $property->getListingType() != null && $property->getListingType()->equals(ListingType::RENTAL)}
 {assign var="rental_terms" value="{$property->getRentalTerms()}"}
 {include file="trulia-property-rental-terms-v2.5.tpl" property=$rental_terms assign="rental_terms"}{$rental_terms|indent:4:" "}
 {/if}

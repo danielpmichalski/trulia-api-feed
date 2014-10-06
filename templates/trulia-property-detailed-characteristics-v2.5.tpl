@@ -102,14 +102,14 @@
     <has-washer-dryer-hookup>{if $detailed_characteristics->getHasWasherDryerHookup()}yes{else}no{/if}</has-washer-dryer-hookup>
     <has-wet-bar>{if $detailed_characteristics->getHasWetBar()}yes{else}no{/if}</has-wet-bar>
     <has-window-coverings>{if $detailed_characteristics->getHasWindowCoverings()}yes{else}no{/if}</has-window-coverings>
-    <building-has-concierge>{$detailed_characteristics->getBuildingHasConcierge()}</building-has-concierge>
-    <building-has-doorman>{$detailed_characteristics->getBuildingHasDoorman()}</building-has-doorman>
-    <building-has-elevator>{$detailed_characteristics->getBuildingHasElevator()}</building-has-elevator>
-    <building-has-fitness-center>{$detailed_characteristics->getBuildingHasFitnessCenter()}</building-has-fitness-center>
-    <building-has-on-site-maintenance>{$detailed_characteristics->getBuildingHasOnSiteMaintenance()}</building-has-on-site-maintenance>
-    <is-waterfront>{$detailed_characteristics->getIsWaterfront()}</is-waterfront>
-    <is-new-construction>{$detailed_characteristics->getIsNewConstruction()}</is-new-construction>
-    <furnished>{$detailed_characteristics->getFurnished()}</furnished>
+    <building-has-concierge>{if $detailed_characteristics->getBuildingHasConcierge()}yes{else}no{/if}</building-has-concierge>
+    <building-has-doorman>{if $detailed_characteristics->getBuildingHasDoorman()}yes{else}no{/if}</building-has-doorman>
+    <building-has-elevator>{if $detailed_characteristics->getBuildingHasElevator()}yes{else}no{/if}</building-has-elevator>
+    <building-has-fitness-center>{if $detailed_characteristics->getBuildingHasFitnessCenter()}yes{else}no{/if}</building-has-fitness-center>
+    <building-has-on-site-maintenance>{if $detailed_characteristics->getBuildingHasOnSiteMaintenance()}yes{else}no{/if}</building-has-on-site-maintenance>
+    <is-waterfront>{if $detailed_characteristics->getIsWaterfront()}yes{else}no{/if}</is-waterfront>
+    <is-new-construction>{if $detailed_characteristics->getIsNewConstruction()}yes{else}no{/if}</is-new-construction>
+    <furnished>{if $detailed_characteristics->getFurnished()}yes{else}no{/if}</furnished>
     <view-type>{$detailed_characteristics->getViewType()}</view-type>
 {assign var="other_amenities" value="{$detailed_characteristics->getOtherAmenities()}"}
     <other-amenities>

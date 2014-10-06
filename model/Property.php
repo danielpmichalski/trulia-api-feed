@@ -65,7 +65,7 @@ class Property extends Element {
     private $rental_terms;
     private $advertise_with_us;
 
-    public function __construct($status, Location $location, Details $details,
+    public function __construct(Status $status, Location $location, Details $details,
                                 LandingPage $landing_page, Agent $agent) {
         $this->status = $status;
         $this->location = $location;

@@ -1,5 +1,6 @@
 <?php
 include_once(MODEL_ROOT . '/elements/Element.php');
+include_once(MODEL_ROOT . '/elements/EmptyElement.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/Appliances.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/CoolingSystems.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/HeatingSystems.php');
@@ -943,7 +944,7 @@ class DetailedCharacteristics extends Element {
      */
     public function getParkingTypes() {
         if ($this->parking_types == null) {
-            $this->parking_types = new ParkingTypes();
+            $this->parking_types = new ParkingTypes(new EmptyElement());
         }
         return $this->parking_types->getAll();
     }
