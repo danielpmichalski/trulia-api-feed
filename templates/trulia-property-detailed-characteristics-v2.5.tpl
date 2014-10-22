@@ -8,13 +8,13 @@
         <has-disposal>{if $appliances->getHasDisposal()}yes{else}no{/if}</has-disposal>
         <has-microwave>{if $appliances->getHasMicrowave()}yes{else}no{/if}</has-microwave>
         <range-type>{$appliances->getRangeType()}</range-type>
-        <appliances-comments>{$appliances->getAppliancesComments()}</appliances-comments>
+        <appliances-comments><![CDATA[{$appliances->getAppliancesComments()}]]></appliances-comments>
 {assign var="additional_appliances" value="{$appliances->getAdditionalAppliances()}"}
         <additional-appliances>
 {foreach $additional_appliances as $additional_appliance}
             <additional-appliance>
-                <additional-appliance-name>{$additional_appliance->getName()}</additional-appliance-name>
-                <additional-appliance-description>{$additional_appliance->getDescription()}</additional-appliance-description>
+                <additional-appliance-name><![CDATA[{$additional_appliance->getName()}]]></additional-appliance-name>
+                <additional-appliance-description><![CDATA[{$additional_appliance->getDescription()}]]></additional-appliance-description>
             </additional-appliance>
 {/foreach}
         </additional-appliances>
@@ -23,7 +23,7 @@
     <cooling-systems>
         <has-air-conditioning>{if $cooling_systems->getHasAirConditioning()}yes{else}no{/if}</has-air-conditioning>
         <has-ceiling-fan>{if $cooling_systems->getHasCeilingFan()}yes{else}no{/if}</has-ceiling-fan>
-        <other-cooling>{$cooling_systems->getOtherCooling()}</other-cooling>
+        <other-cooling><![CDATA[{$cooling_systems->getOtherCooling()}]]></other-cooling>
     </cooling-systems>
 {assign var="heating_systems" value="{$detailed_characteristics->getHeatingSystems()}"}
     <heating-systems>
@@ -39,15 +39,15 @@
 {assign var="parking_types" value="{$detailed_characteristics->getParkingTypes()}"}
     <parking-types>
 {foreach $parking_types as $parking_type}
-        <parking-type></parking-type>
+        <parking-type>{$parking_type}</parking-type>
 {/foreach}
     </parking-types>
     <has-assigned-parking-space>{if $detailed_characteristics->getHasAssignedParkingSpace()}yes{else}no{/if}</has-assigned-parking-space>
     <parking-space-fee>{$detailed_characteristics->getParkingSpaceFee()}</parking-space-fee>
     <assigned-parking-space-cost>{$detailed_characteristics->getAssignedParkingSpaceCost()|string_format:"%d"}</assigned-parking-space-cost>
-    <parking-comment>{$detailed_characteristics->getParkingComment()}</parking-comment>
+    <parking-comment><![CDATA[{$detailed_characteristics->getParkingComment()}]]></parking-comment>
     <foundation-type>{$detailed_characteristics->getFoundationType()}</foundation-type>
-    <roof-type>{$detailed_characteristics->getRoofType()}</roof-type>
+    <roof-type><![CDATA[{$detailed_characteristics->getRoofType()}]]></roof-type>
     <architecture-style>{$detailed_characteristics->getArchitectureStyle()}</architecture-style>
     <exterior-type>{$detailed_characteristics->getExteriorType()}</exterior-type>
     <room-count>{$detailed_characteristics->getRoomCount()|string_format:"%d"}</room-count>
@@ -55,9 +55,9 @@
     <rooms>
 {foreach $rooms as $room}
         <room>
-            <room-type>{$room->getType()}</room-type>
-            <room-size>{$room->getSize()}</room-size>
-            <room-description>{$room->getDescription()}</room-description>
+            <room-type><![CDATA[{$room->getType()}]]></room-type>
+            <room-size><![CDATA[{$room->getSize()}]]></room-size>
+            <room-description><![CDATA[{$room->getDescription()}]]></room-description>
         </room>
 {/foreach}
     </rooms>
@@ -110,11 +110,11 @@
     <is-waterfront>{if $detailed_characteristics->getIsWaterfront()}yes{else}no{/if}</is-waterfront>
     <is-new-construction>{if $detailed_characteristics->getIsNewConstruction()}yes{else}no{/if}</is-new-construction>
     <furnished>{if $detailed_characteristics->getFurnished()}yes{else}no{/if}</furnished>
-    <view-type>{$detailed_characteristics->getViewType()}</view-type>
+    <view-type><![CDATA[{$detailed_characteristics->getViewType()}]]></view-type>
 {assign var="other_amenities" value="{$detailed_characteristics->getOtherAmenities()}"}
     <other-amenities>
 {foreach $other_amenities as $other_amenity}
-        <other-amenity>{$other_amenity}</other-amenity>
+        <other-amenity><![CDATA[{$other_amenity}]]></other-amenity>
 {/foreach}
     </other-amenities>
 </detailed-characteristics>

@@ -13,7 +13,7 @@
 {assign var="site" value="{$property->getSite()}"}
     <site>
         <site-url>{$site->getSiteUrl()}</site-url>
-        <site-name>{$site->getSiteName()}</site-name>
+        <site-name><![CDATA[{$site->getSiteName()}]]></site-name>
     </site>
 {assign var="pictures" value="{$property->getPictures()}"}
 {include file="trulia-property-pictures-v2.5.tpl" property=$pictures assign="pictures"}{$pictures|indent:4:" "}
@@ -29,7 +29,7 @@
     <hoa-fees>
         <hoa-fee>{$hoaFee->getHoaFee()|string_format:"%d"}</hoa-fee>
         <hoa-period>{$hoaFee->getHoaPeriod()}</hoa-period>
-        <hoa-description>{$hoaFee->getHoaDescription()}</hoa-description>
+        <hoa-description><![CDATA[{$hoaFee->getHoaDescription()}]]></hoa-description>
     </hoa-fees>
 {assign var="additionalFees" value="{$property->getAdditionalFees()}"}
 {include file="trulia-property-additional-fees-v2.5.tpl" property=$additionalFees assign="additionalFees"}{$additionalFees|indent:4:" "}
@@ -40,8 +40,8 @@
 {assign var="plan" value="{$property->getPlan()}"}
     <plan>
         <plan-id>{$plan->getPlanId()}</plan-id>
-        <plan-name>{$plan->getPlanName()}</plan-name>
-        <plan-type>{$plan->getPlanType()}</plan-type>
+        <plan-name><![CDATA[{$plan->getPlanName()}]]></plan-name>
+        <plan-type><![CDATA[{$plan->getPlanType()}]]></plan-type>
         <plan-base-price>{$plan->getPlanBasePrice()}</plan-base-price>
     </plan>
 {assign var="spec" value="{$property->getSpec()}"}
@@ -60,14 +60,14 @@
 {assign var="builder" value="{$property->getBuilder()}"}
 {include file="trulia-property-builder-v2.5.tpl" property=$builder assign="builder"}{$builder|indent:4:" "}
 {if $property->getListingType() != null && $property->getListingType()->equals(ListingType::RENTAL)}
-{assign var="property_manager" value="{$property->getPropertyManager()}"}
-{include file="trulia-property-property-manager-v2.5.tpl" property=$property_manager assign="property_manager"}{$property_manager|indent:4:" "}
+    {assign var="property_manager" value="{$property->getPropertyManager()}"}
+    {include file="trulia-property-property-manager-v2.5.tpl" property=$property_manager assign="property_manager"}{$property_manager|indent:4:" "}
 {/if}
 {assign var="detailed_characteristics" value="{$property->getDetailedCharacteristics()}"}
 {include file="trulia-property-detailed-characteristics-v2.5.tpl" property=$detailed_characteristics assign="detailed_characteristics"}{$detailed_characteristics|indent:4:" "}
 {if $property->getListingType() != null && $property->getListingType()->equals(ListingType::RENTAL)}
-{assign var="rental_terms" value="{$property->getRentalTerms()}"}
-{include file="trulia-property-rental-terms-v2.5.tpl" property=$rental_terms assign="rental_terms"}{$rental_terms|indent:4:" "}
+    {assign var="rental_terms" value="{$property->getRentalTerms()}"}
+    {include file="trulia-property-rental-terms-v2.5.tpl" property=$rental_terms assign="rental_terms"}{$rental_terms|indent:4:" "}
 {/if}
 {assign var="advertise" value="{$property->getAdvertiseWithUs()}"}
 {include file="trulia-property-advertise-with-us-v2.5.tpl" property=$advertise assign="advertise"}{$advertise|indent:4:" "}

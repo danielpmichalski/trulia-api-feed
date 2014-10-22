@@ -7,12 +7,12 @@
     <living-area-square-feet>{$details->getLivingAreaSquareFeet()|string_format:"%d"}</living-area-square-feet>
     <date-listed>{$details->getDateListed()}</date-listed>
     <property-type>{$details->getPropertyType()}</property-type>
-    <description>{$details->getDescription()}</description>
+    <description><![CDATA[{$details->getDescription()}]]></description>
     <mlsId>{$details->getMlsId()}</mlsId>
-    <mlsName>{$details->getMlsName()}</mlsName>
-    <provider-listingid>{$details->getProviderListingId()}</provider-listingid>
-    <lot-size>{$details->getLotSize()}</lot-size>
-    <listing-title>{$details->getListingTitle()}</listing-title>
+    <mlsName><![CDATA[{$details->getMlsName()}]]></mlsName>
+    <provider-listingid><![CDATA[{$details->getProviderListingId()}]]></provider-listingid>
+    <lot-size><![CDATA[{$details->getLotSize()}]]></lot-size>
+    <listing-title><![CDATA[{$details->getListingTitle()}]]></listing-title>
     <year-built>{$details->getYearBuilt()}</year-built>
     <date-available>{$details->getDateAvailable()}</date-available>
     <date-sold>{$details->getDateSold()}</date-sold>

@@ -4,7 +4,7 @@
         <start-time>{$open_home->getStartTime()}</start-time>
         <end-time>{$open_home->getEndTime()}</end-time>
         <date>{$open_home->getDate()}</date>
-        <details>{$open_home->getDetails()}</details>
+        <details><![CDATA[{$open_home->getDetails()}]]></details>
         <open-home-appointment-required>{if $open_home->getOpenHomeAppointmentRequired()}yes{else}no{/if}</open-home-appointment-required>
     </open-home>
 {/foreach}

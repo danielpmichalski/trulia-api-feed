@@ -10,11 +10,11 @@
         <lease-period>{$lease_period|string_format:"%d"}</lease-period>
 {/foreach}
     </lease-periods>
-    <lease-details>{$rental_terms->getLeaseDetails()}</lease-details>
+    <lease-details><![CDATA[{$rental_terms->getLeaseDetails()}]]></lease-details>
     <security-deposit>{$rental_terms->getSecurityDeposit()|string_format:"%d"}</security-deposit>
-    <security-deposit-description>{$rental_terms->getSecurityDepositDescription()}</security-deposit-description>
+    <security-deposit-description><![CDATA[{$rental_terms->getSecurityDepositDescription()}]]></security-deposit-description>
     <application-fee>{$rental_terms->getApplicationFee()|string_format:"%d"}</application-fee>
-    <application-fee-description>{$rental_terms->getApplicationFeeDescription()}</application-fee-description>
+    <application-fee-description><![CDATA[{$rental_terms->getApplicationFeeDescription()}]]></application-fee-description>
     <credit-cards-accepted>{if $rental_terms->getCreditCardsAccepted()}yes{else}no{/if}</credit-cards-accepted>
 {assign var="credit_cards" value="{$rental_terms->getCreditCards()}"}
     <credit-cards>
@@ -36,7 +36,7 @@
 {assign var="pet_comments" value="{$pets->getPetComments()}"}
         <pet-comments>
 {foreach $pet_comments as $pet_comment}
-            <pet-comment>{$pet_comment}</pet-comment>
+            <pet-comment><![CDATA[{$pet_comment}]]></pet-comment>
 {/foreach}
         </pet-comments>
     </pets>
@@ -58,7 +58,7 @@
 {assign var="utilities_comments" value="{$utilities_included->getUtilitiesComments()}"}
         <utilities-comments>
 {foreach $utilities_comments as $utilities_comment}
-            <utilities-comment>{$utilities_comment}</utilities-comment>
+            <utilities-comment><![CDATA[{$utilities_comment}]]></utilities-comment>
 {/foreach}
         </utilities-comments>
     </utilities-included>
