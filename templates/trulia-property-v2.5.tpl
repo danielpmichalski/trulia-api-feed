@@ -46,7 +46,7 @@
     </plan>
 {assign var="spec" value="{$property->getSpec()}"}
     <spec>
-        <is-spec-home>{$spec->getIsSpecHome()}</is-spec-home>
+        <is-spec-home>{$spec->isSpecHome()}</is-spec-home>
         <spec-id>{$spec->getSpecid()}</spec-id>
     </spec>
 {assign var="agent" value="{$property->getAgent()}"}

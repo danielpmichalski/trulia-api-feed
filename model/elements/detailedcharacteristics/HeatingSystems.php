@@ -1,5 +1,8 @@
 <?php
 include_once(MODEL_ROOT . '/elements/Element.php');
+include_once(MODEL_ROOT . '/enums/FirePlaceType.php');
+include_once(MODEL_ROOT . '/enums/HeatingFuel.php');
+include_once(MODEL_ROOT . '/enums/HeatingSystem.php');
 
 class HeatingSystems extends Element {
     private $has_fireplace;
@@ -8,56 +11,56 @@ class HeatingSystems extends Element {
     private $heating_fuel;
 
     /**
-     * @param mixed $fireplace_type
+     * @param FirePlaceType $fireplace_type
      */
-    public function setFireplaceType($fireplace_type) {
+    public function setFireplaceType(FirePlaceType $fireplace_type) {
         $this->fireplace_type = $fireplace_type;
     }
 
     /**
-     * @return mixed
+     * @return FirePlaceType
      */
     public function getFireplaceType() {
         return $this->fireplace_type;
     }
 
     /**
-     * @param mixed $has_fireplace
+     * @param boolean $has_fireplace
      */
-    public function setHasFireplace($has_fireplace) {
+    public function setFireplace($has_fireplace) {
         $this->has_fireplace = $has_fireplace;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasFireplace() {
+    public function hasFireplace() {
         return $this->has_fireplace;
     }
 
     /**
-     * @param mixed $heating_fuel
+     * @param HeatingFuel $heating_fuel
      */
-    public function setHeatingFuel($heating_fuel) {
+    public function setHeatingFuel(HeatingFuel $heating_fuel) {
         $this->heating_fuel = $heating_fuel;
     }
 
     /**
-     * @return mixed
+     * @return HeatingFuel
      */
     public function getHeatingFuel() {
         return $this->heating_fuel;
     }
 
     /**
-     * @param mixed $heating_system
+     * @param HeatingSystem $heating_system
      */
-    public function setHeatingSystem($heating_system) {
+    public function setHeatingSystem(HeatingSystem $heating_system) {
         $this->heating_system = $heating_system;
     }
 
     /**
-     * @return mixed
+     * @return HeatingSystem
      */
     public function getHeatingSystem() {
         return $this->heating_system;

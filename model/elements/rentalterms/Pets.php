@@ -16,30 +16,30 @@ class Pets extends Element {
     private $pet_comments;
 
     /**
-     * @param mixed $cats_allowed
+     * @param boolean $cats_allowed
      */
     public function setCatsAllowed($cats_allowed) {
         $this->cats_allowed = $cats_allowed;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getCatsAllowed() {
+    public function areCatsAllowed() {
         return $this->cats_allowed;
     }
 
     /**
-     * @param mixed $large_dogs_allowed
+     * @param boolean $large_dogs_allowed
      */
     public function setLargeDogsAllowed($large_dogs_allowed) {
         $this->large_dogs_allowed = $large_dogs_allowed;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getLargeDogsAllowed() {
+    public function areLargeDogsAllowed() {
         return $this->large_dogs_allowed;
     }
 
@@ -103,16 +103,16 @@ class Pets extends Element {
     }
 
     /**
-     * @param mixed $pet_other_allowed
+     * @param boolean $pet_other_allowed
      */
-    public function setPetOtherAllowed($pet_other_allowed) {
+    public function setOtherPetsAreAllowed($pet_other_allowed) {
         $this->pet_other_allowed = $pet_other_allowed;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getPetOtherAllowed() {
+    public function areOtherPetsAllowed() {
         return $this->pet_other_allowed;
     }
 
@@ -145,16 +145,16 @@ class Pets extends Element {
     }
 
     /**
-     * @param mixed $small_dogs_allowed
+     * @param boolean $small_dogs_allowed
      */
     public function setSmallDogsAllowed($small_dogs_allowed) {
         $this->small_dogs_allowed = $small_dogs_allowed;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getSmallDogsAllowed() {
+    public function areSmallDogsAllowed() {
         return $this->small_dogs_allowed;
     }
 } 

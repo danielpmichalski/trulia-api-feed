@@ -8,16 +8,44 @@ class AdvertiseWithUs extends Element {
     private $branded_logo_url;
 
     /**
-     * @param mixed $branded
+     * @param mixed $channel
+     */
+    public function setChannel($channel) {
+        $this->channel = $channel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChannel() {
+        return $this->channel;
+    }
+
+    /**
+     * @param boolean $featured
+     */
+    public function setFeatured($featured) {
+        $this->featured = $featured;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isFeatured() {
+        return $this->featured;
+    }
+
+    /**
+     * @param boolean $branded
      */
     public function setBranded($branded) {
         $this->branded = $branded;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBranded() {
+    public function isBranded() {
         return $this->branded;
     }
 
@@ -34,32 +62,4 @@ class AdvertiseWithUs extends Element {
     public function getBrandedLogoUrl() {
         return $this->branded_logo_url;
     }
-
-    /**
-     * @param mixed $channel
-     */
-    public function setChannel($channel) {
-        $this->channel = $channel;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getChannel() {
-        return $this->channel;
-    }
-
-    /**
-     * @param mixed $featured
-     */
-    public function setFeatured($featured) {
-        $this->featured = $featured;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFeatured() {
-        return $this->featured;
-    }
-} 
+}

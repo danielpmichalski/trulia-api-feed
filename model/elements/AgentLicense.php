@@ -7,20 +7,6 @@ class AgentLicense extends Element {
     private $state;
 
     /**
-     * @param mixed $agent_license_category
-     */
-    public function setCategory($agent_license_category) {
-        $this->category = $agent_license_category;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCategory() {
-        return $this->category;
-    }
-
-    /**
      * @param mixed $agent_license_number
      */
     public function setNumber($agent_license_number) {
@@ -32,6 +18,20 @@ class AgentLicense extends Element {
      */
     public function getNumber() {
         return $this->number;
+    }
+
+    /**
+     * @param mixed $agent_license_category
+     */
+    public function setCategory($agent_license_category) {
+        $this->category = $agent_license_category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory() {
+        return $this->category;
     }
 
     /**

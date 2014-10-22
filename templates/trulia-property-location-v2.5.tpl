@@ -1,7 +1,7 @@
 <location>
     <unit-number><![CDATA[{$location->getUnitNumber()}]]></unit-number>
     <street-address><![CDATA[{$location->getStreetAddress()}]]></street-address>
-    <display-address>{if $location->getDisplayAddress()}yes{else}no{/if}</display-address>
+    <display-address>{if $location->isDisplayAddress()}yes{else}no{/if}</display-address>
     <city-name><![CDATA[{$location->getCityName()}]]></city-name>
     <zipcode>{$location->getZipcode()}</zipcode>
     <county><![CDATA[{$location->getCounty()}]]></county>

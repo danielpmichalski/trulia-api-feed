@@ -1,5 +1,6 @@
 <?php
 include_once(MODEL_ROOT . '/elements/Element.php');
+include_once(MODEL_ROOT . '/enums/GeoCodeType.php');
 
 class Location extends Element {
     private $city_name;
@@ -116,16 +117,16 @@ class Location extends Element {
     }
 
     /**
-     * @return mixed
+     * @return GeoCodeType
      */
     public function getGeocodeType() {
         return $this->geocode_type;
     }
 
     /**
-     * @param mixed $geocode_type
+     * @param GeoCodeType $geocode_type
      */
-    public function setGeocodeType($geocode_type) {
+    public function setGeocodeType(GeoCodeType $geocode_type) {
         $this->geocode_type = $geocode_type;
     }
 
@@ -256,14 +257,14 @@ class Location extends Element {
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getDisplayAddress() {
+    public function isDisplayAddress() {
         return $this->display_address;
     }
 
     /**
-     * @param mixed $display_address
+     * @param boolean $display_address
      */
     public function setDisplayAddress($display_address) {
         $this->display_address = $display_address;

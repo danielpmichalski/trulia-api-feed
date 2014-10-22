@@ -1,5 +1,6 @@
 <?php
 include_once(MODEL_ROOT . '/elements/Element.php');
+include_once(MODEL_ROOT . '/enums/PropertyType.php');
 
 class Details extends Element {
     private $price;
@@ -111,14 +112,14 @@ class Details extends Element {
     }
 
     /**
-     * @param mixed $living_area_square_feet
+     * @param Integer $living_area_square_feet
      */
     public function setLivingAreaSquareFeet($living_area_square_feet) {
         $this->living_area_square_feet = $living_area_square_feet;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getLivingAreaSquareFeet() {
         return $this->living_area_square_feet;
@@ -167,84 +168,84 @@ class Details extends Element {
     }
 
     /**
-     * @param mixed $num_bathrooms
+     * @param Integer $num_bathrooms
      */
     public function setNumBathrooms($num_bathrooms) {
         $this->num_bathrooms = $num_bathrooms;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getNumBathrooms() {
         return $this->num_bathrooms;
     }
 
     /**
-     * @param mixed $num_bedrooms
+     * @param Integer $num_bedrooms
      */
     public function setNumBedrooms($num_bedrooms) {
         $this->num_bedrooms = $num_bedrooms;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getNumBedrooms() {
         return $this->num_bedrooms;
     }
 
     /**
-     * @param mixed $num_fullbathrooms
+     * @param Integer $num_fullbathrooms
      */
     public function setNumFullbathrooms($num_fullbathrooms) {
         $this->num_fullbathrooms = $num_fullbathrooms;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getNumFullbathrooms() {
         return $this->num_fullbathrooms;
     }
 
     /**
-     * @param mixed $num_halfbathrooms
+     * @param Integer $num_halfbathrooms
      */
     public function setNumHalfbathrooms($num_halfbathrooms) {
         $this->num_halfbathrooms = $num_halfbathrooms;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getNumHalfbathrooms() {
         return $this->num_halfbathrooms;
     }
 
     /**
-     * @param mixed $price
+     * @param Integer $price
      */
     public function setPrice($price) {
         $this->price = $price;
     }
 
     /**
-     * @return mixed
+     * @return Integer
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param mixed $property_type
+     * @param PropertyType $property_type
      */
-    public function setPropertyType($property_type) {
+    public function setPropertyType(PropertyType $property_type) {
         $this->property_type = $property_type;
     }
 
     /**
-     * @return mixed
+     * @return PropertyType
      */
     public function getPropertyType() {
         return $this->property_type;

@@ -7,30 +7,30 @@ class CoolingSystems extends Element {
     private $other_cooling;
 
     /**
-     * @param mixed $has_air_conditioning
+     * @param boolean $has_air_conditioning
      */
-    public function setHasAirConditioning($has_air_conditioning) {
+    public function setAirConditioning($has_air_conditioning) {
         $this->has_air_conditioning = $has_air_conditioning;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasAirConditioning() {
+    public function hasAirConditioning() {
         return $this->has_air_conditioning;
     }
 
     /**
-     * @param mixed $has_ceiling_fan
+     * @param boolean $has_ceiling_fan
      */
-    public function setHasCeilingFan($has_ceiling_fan) {
+    public function setCeilingFan($has_ceiling_fan) {
         $this->has_ceiling_fan = $has_ceiling_fan;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasCeilingFan() {
+    public function hasCeilingFan() {
         return $this->has_ceiling_fan;
     }
 

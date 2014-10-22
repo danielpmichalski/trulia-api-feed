@@ -5,6 +5,9 @@ include_once(MODEL_ROOT . '/elements/rentalterms/LeasePeriods.php');
 include_once(MODEL_ROOT . '/elements/rentalterms/CreditCards.php');
 include_once(MODEL_ROOT . '/elements/rentalterms/Pets.php');
 include_once(MODEL_ROOT . '/elements/rentalterms/UtilitiesIncluded.php');
+include_once(MODEL_ROOT . '/enums/PriceTerm.php');
+include_once(MODEL_ROOT . '/enums/RentalType.php');
+include_once(MODEL_ROOT . '/enums/LeaseType.php');
 
 class RentalTerms extends Element {
     private $price_term;
@@ -133,14 +136,14 @@ class RentalTerms extends Element {
     }
 
     /**
-     * @param mixed $lease_type
+     * @param LeaseType $lease_type
      */
-    public function setLeaseType($lease_type) {
+    public function setLeaseType(LeaseType $lease_type) {
         $this->lease_type = $lease_type;
     }
 
     /**
-     * @return mixed
+     * @return LeaseType
      */
     public function getLeaseType() {
         return $this->lease_type;
@@ -164,14 +167,14 @@ class RentalTerms extends Element {
     }
 
     /**
-     * @param mixed $price_term
+     * @param PriceTerm $price_term
      */
-    public function setPriceTerm($price_term) {
+    public function setPriceTerm(PriceTerm $price_term) {
         $this->price_term = $price_term;
     }
 
     /**
-     * @return mixed
+     * @return PriceTerm
      */
     public function getPriceTerm() {
         return $this->price_term;
@@ -234,14 +237,14 @@ class RentalTerms extends Element {
     }
 
     /**
-     * @param mixed $rental_type
+     * @param RentalType $rental_type
      */
-    public function setRentalType($rental_type) {
+    public function setRentalType(RentalType $rental_type) {
         $this->rental_type = $rental_type;
     }
 
     /**
-     * @return mixed
+     * @return RentalType
      */
     public function getRentalType() {
         return $this->rental_type;
@@ -307,16 +310,16 @@ class RentalTerms extends Element {
     }
 
     /**
-     * @param mixed $credit_cards_accepted
+     * @param boolean $credit_cards_accepted
      */
     public function setCreditCardsAccepted($credit_cards_accepted) {
         $this->credit_cards_accepted = $credit_cards_accepted;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getCreditCardsAccepted() {
+    public function areCreditCardsAccepted() {
         return $this->credit_cards_accepted;
     }
 }

@@ -2,6 +2,7 @@
 include_once(MODEL_ROOT . '/elements/Element.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/AdditionalAppliances.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/AdditionalAppliance.php');
+include_once(MODEL_ROOT . '/enums/RangeType.php');
 
 class Appliances extends Element {
     private $additional_appliances;
@@ -29,98 +30,98 @@ class Appliances extends Element {
     }
 
     /**
-     * @param mixed $has_dishwasher
+     * @param boolean $has_dishwasher
      */
-    public function setHasDishwasher($has_dishwasher) {
+    public function setDishwasher($has_dishwasher) {
         $this->has_dishwasher = $has_dishwasher;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDishwasher() {
+    public function hasDishwasher() {
         return $this->has_dishwasher;
     }
 
     /**
-     * @param mixed $has_disposal
+     * @param boolean $has_disposal
      */
-    public function setHasDisposal($has_disposal) {
+    public function setDisposal($has_disposal) {
         $this->has_disposal = $has_disposal;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDisposal() {
+    public function hasDisposal() {
         return $this->has_disposal;
     }
 
     /**
-     * @param mixed $has_dryer
+     * @param boolean $has_dryer
      */
-    public function setHasDryer($has_dryer) {
+    public function setDryer($has_dryer) {
         $this->has_dryer = $has_dryer;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDryer() {
+    public function hasDryer() {
         return $this->has_dryer;
     }
 
     /**
-     * @param mixed $has_microwave
+     * @param boolean $has_microwave
      */
-    public function setHasMicrowave($has_microwave) {
+    public function setMicrowave($has_microwave) {
         $this->has_microwave = $has_microwave;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasMicrowave() {
+    public function hasMicrowave() {
         return $this->has_microwave;
     }
 
     /**
-     * @param mixed $has_refrigerator
+     * @param boolean $has_refrigerator
      */
-    public function setHasRefrigerator($has_refrigerator) {
+    public function setRefrigerator($has_refrigerator) {
         $this->has_refrigerator = $has_refrigerator;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasRefrigerator() {
+    public function hasRefrigerator() {
         return $this->has_refrigerator;
     }
 
     /**
-     * @param mixed $has_washer
+     * @param boolean $has_washer
      */
-    public function setHasWasher($has_washer) {
+    public function setWasher($has_washer) {
         $this->has_washer = $has_washer;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasWasher() {
+    public function hasWasher() {
         return $this->has_washer;
     }
 
     /**
-     * @param mixed $range_type
+     * @param RangeType $range_type
      */
-    public function setRangeType($range_type) {
+    public function setRangeType(RangeType $range_type) {
         $this->range_type = $range_type;
     }
 
     /**
-     * @return mixed
+     * @return RangeType
      */
     public function getRangeType() {
         return $this->range_type;

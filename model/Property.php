@@ -1,6 +1,7 @@
 <?php
 // Enums
 include_once(MODEL_ROOT . '/enums/Status.php');
+include_once(MODEL_ROOT . '/enums/ListingType.php');
 // Elements
 include_once(MODEL_ROOT . '/elements/Element.php');
 include_once(MODEL_ROOT . '/elements/Location.php');
@@ -65,8 +66,9 @@ class Property extends Element {
     private $rental_terms;
     private $advertise_with_us;
 
-    public function __construct(Status $status, Location $location, Details $details,
+    public function __construct(ListingType $listing_type, Status $status, Location $location, Details $details,
                                 LandingPage $landing_page, Agent $agent) {
+        $this->listing_type = $listing_type;
         $this->status = $status;
         $this->location = $location;
         $this->details = $details;
@@ -496,6 +498,13 @@ class Property extends Element {
     }
 
     /**
+     * @param mixed $hoa_fees
+     */
+    public function setHoaFee($hoa_fees) {
+        $this->hoa_fee = $hoa_fees;
+    }
+
+    /**
      * @return mixed
      */
     public function getHoaFee() {
@@ -504,11 +513,4 @@ class Property extends Element {
         }
         return $this->hoa_fee;
     }
-
-    /**
-     * @param mixed $hoa_fees
-     */
-    public function setHoaFee($hoa_fees) {
-        $this->hoa_fee = $hoa_fees;
-    }
-} 
+}

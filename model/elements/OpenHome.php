@@ -51,16 +51,16 @@ class OpenHome extends Element {
     }
 
     /**
-     * @param mixed $open_home_appointment_required
+     * @param boolean $open_home_appointment_required
      */
     public function setOpenHomeAppointmentRequired($open_home_appointment_required) {
         $this->open_home_appointment_required = $open_home_appointment_required;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getOpenHomeAppointmentRequired() {
+    public function isOpenHomeAppointmentRequired() {
         return $this->open_home_appointment_required;
     }
 

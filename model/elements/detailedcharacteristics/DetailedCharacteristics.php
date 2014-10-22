@@ -8,6 +8,11 @@ include_once(MODEL_ROOT . '/elements/detailedcharacteristics/OtherAmenities.php'
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/ParkingTypes.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/Rooms.php');
 include_once(MODEL_ROOT . '/elements/detailedcharacteristics/Room.php');
+include_once(MODEL_ROOT . '/enums/ArchitectureStyle.php');
+include_once(MODEL_ROOT . '/enums/ExteriorType.php');
+include_once(MODEL_ROOT . '/enums/FloorCoverings.php');
+include_once(MODEL_ROOT . '/enums/FoundationType.php');
+include_once(MODEL_ROOT . '/enums/GarageType.php');
 
 class DetailedCharacteristics extends Element {
     private $appliances;
@@ -98,14 +103,14 @@ class DetailedCharacteristics extends Element {
     }
 
     /**
-     * @param mixed $architecture_style
+     * @param ArchitectureStyle $architecture_style
      */
-    public function setArchitectureStyle($architecture_style) {
+    public function setArchitectureStyle(ArchitectureStyle $architecture_style) {
         $this->architecture_style = $architecture_style;
     }
 
     /**
-     * @return mixed
+     * @return ArchitectureStyle
      */
     public function getArchitectureStyle() {
         return $this->architecture_style;
@@ -126,72 +131,72 @@ class DetailedCharacteristics extends Element {
     }
 
     /**
-     * @param mixed $building_has_concierge
+     * @param boolean $building_has_concierge
      */
     public function setBuildingHasConcierge($building_has_concierge) {
         $this->building_has_concierge = $building_has_concierge;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBuildingHasConcierge() {
+    public function hasBuildingGotConcierge() {
         return $this->building_has_concierge;
     }
 
     /**
-     * @param mixed $building_has_doorman
+     * @param boolean $building_has_doorman
      */
     public function setBuildingHasDoorman($building_has_doorman) {
         $this->building_has_doorman = $building_has_doorman;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBuildingHasDoorman() {
+    public function hasBuildingGotDoorman() {
         return $this->building_has_doorman;
     }
 
     /**
-     * @param mixed $building_has_elevator
+     * @param boolean $building_has_elevator
      */
     public function setBuildingHasElevator($building_has_elevator) {
         $this->building_has_elevator = $building_has_elevator;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBuildingHasElevator() {
+    public function hasBuildingGotElevator() {
         return $this->building_has_elevator;
     }
 
     /**
-     * @param mixed $building_has_fitness_center
+     * @param boolean $building_has_fitness_center
      */
     public function setBuildingHasFitnessCenter($building_has_fitness_center) {
         $this->building_has_fitness_center = $building_has_fitness_center;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBuildingHasFitnessCenter() {
+    public function hasBuildingGotFitnessCenter() {
         return $this->building_has_fitness_center;
     }
 
     /**
-     * @param mixed $building_has_on_site_maintenance
+     * @param boolean $building_has_on_site_maintenance
      */
     public function setBuildingHasOnSiteMaintenance($building_has_on_site_maintenance) {
         $this->building_has_on_site_maintenance = $building_has_on_site_maintenance;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getBuildingHasOnSiteMaintenance() {
+    public function hasBuildingGotOnSiteMaintenance() {
         return $this->building_has_on_site_maintenance;
     }
 
@@ -213,618 +218,618 @@ class DetailedCharacteristics extends Element {
     }
 
     /**
-     * @param mixed $exterior_type
+     * @param ExteriorType $exterior_type
      */
-    public function setExteriorType($exterior_type) {
+    public function setExteriorType(ExteriorType $exterior_type) {
         $this->exterior_type = $exterior_type;
     }
 
     /**
-     * @return mixed
+     * @return ExteriorType
      */
     public function getExteriorType() {
         return $this->exterior_type;
     }
 
     /**
-     * @param mixed $floor_coverings
+     * @param FloorCoverings $floor_coverings
      */
-    public function setFloorCoverings($floor_coverings) {
+    public function setFloorCoverings(FloorCoverings $floor_coverings) {
         $this->floor_coverings = $floor_coverings;
     }
 
     /**
-     * @return mixed
+     * @return FloorCoverings
      */
     public function getFloorCoverings() {
         return $this->floor_coverings;
     }
 
     /**
-     * @param mixed $foundation_type
+     * @param FoundationType $foundation_type
      */
-    public function setFoundationType($foundation_type) {
+    public function setFoundationType(FoundationType $foundation_type) {
         $this->foundation_type = $foundation_type;
     }
 
     /**
-     * @return mixed
+     * @return FoundationType
      */
     public function getFoundationType() {
         return $this->foundation_type;
     }
 
     /**
-     * @param mixed $furnished
+     * @param boolean $furnished
      */
     public function setFurnished($furnished) {
         $this->furnished = $furnished;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getFurnished() {
+    public function isFurnished() {
         return $this->furnished;
     }
 
     /**
-     * @param mixed $garage_type
+     * @param GarageType $garage_type
      */
-    public function setGarageType($garage_type) {
+    public function setGarageType(GarageType $garage_type) {
         $this->garage_type = $garage_type;
     }
 
     /**
-     * @return mixed
+     * @return GarageType
      */
     public function getGarageType() {
         return $this->garage_type;
     }
 
     /**
-     * @param mixed $has_assigned_parking_space
+     * @param boolean $has_assigned_parking_space
      */
-    public function setHasAssignedParkingSpace($has_assigned_parking_space) {
+    public function setAssignedParkingSpace($has_assigned_parking_space) {
         $this->has_assigned_parking_space = $has_assigned_parking_space;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasAssignedParkingSpace() {
+    public function hasAssignedParkingSpace() {
         return $this->has_assigned_parking_space;
     }
 
     /**
-     * @param mixed $has_attic
+     * @param boolean $has_attic
      */
-    public function setHasAttic($has_attic) {
+    public function setAttic($has_attic) {
         $this->has_attic = $has_attic;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasAttic() {
+    public function hasAttic() {
         return $this->has_attic;
     }
 
     /**
-     * @param mixed $has_balcony
+     * @param boolean $has_balcony
      */
-    public function setHasBalcony($has_balcony) {
+    public function setBalcony($has_balcony) {
         $this->has_balcony = $has_balcony;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasBalcony() {
+    public function hasBalcony() {
         return $this->has_balcony;
     }
 
     /**
-     * @param mixed $has_barbeque_area
+     * @param boolean $has_barbeque_area
      */
-    public function setHasBarbequeArea($has_barbeque_area) {
+    public function setBarbequeArea($has_barbeque_area) {
         $this->has_barbeque_area = $has_barbeque_area;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasBarbequeArea() {
+    public function hasBarbequeArea() {
         return $this->has_barbeque_area;
     }
 
     /**
-     * @param mixed $has_basement
+     * @param boolean $has_basement
      */
-    public function setHasBasement($has_basement) {
+    public function setBasement($has_basement) {
         $this->has_basement = $has_basement;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasBasement() {
+    public function hasBasement() {
         return $this->has_basement;
     }
 
     /**
-     * @param mixed $has_cable_satellite
+     * @param boolean $has_cable_satellite
      */
-    public function setHasCableSatellite($has_cable_satellite) {
+    public function setCableSatellite($has_cable_satellite) {
         $this->has_cable_satellite = $has_cable_satellite;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasCableSatellite() {
+    public function hasCableSatellite() {
         return $this->has_cable_satellite;
     }
 
     /**
-     * @param mixed $has_courtyard
+     * @param boolean $has_courtyard
      */
-    public function setHasCourtyard($has_courtyard) {
+    public function setCourtyard($has_courtyard) {
         $this->has_courtyard = $has_courtyard;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasCourtyard() {
+    public function hasCourtyard() {
         return $this->has_courtyard;
     }
 
     /**
-     * @param mixed $has_deck
+     * @param boolean $has_deck
      */
-    public function setHasDeck($has_deck) {
+    public function setDeck($has_deck) {
         $this->has_deck = $has_deck;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDeck() {
+    public function hasDeck() {
         return $this->has_deck;
     }
 
     /**
-     * @param mixed $has_disabled_access
+     * @param boolean $has_disabled_access
      */
-    public function setHasDisabledAccess($has_disabled_access) {
+    public function setDisabledAccess($has_disabled_access) {
         $this->has_disabled_access = $has_disabled_access;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDisabledAccess() {
+    public function hasDisabledAccess() {
         return $this->has_disabled_access;
     }
 
     /**
-     * @param mixed $has_dock
+     * @param boolean $has_dock
      */
-    public function setHasDock($has_dock) {
+    public function setDock($has_dock) {
         $this->has_dock = $has_dock;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDock() {
+    public function hasDock() {
         return $this->has_dock;
     }
 
     /**
-     * @param mixed $has_doublepane_windows
+     * @param boolean $has_doublepane_windows
      */
-    public function setHasDoublepaneWindows($has_doublepane_windows) {
+    public function setDoublepaneWindows($has_doublepane_windows) {
         $this->has_doublepane_windows = $has_doublepane_windows;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasDoublepaneWindows() {
+    public function hasDoublepaneWindows() {
         return $this->has_doublepane_windows;
     }
 
     /**
-     * @param mixed $has_garage
+     * @param boolean $has_garage
      */
-    public function setHasGarage($has_garage) {
+    public function setGarage($has_garage) {
         $this->has_garage = $has_garage;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasGarage() {
+    public function hasGarage() {
         return $this->has_garage;
     }
 
     /**
-     * @param mixed $has_garden
+     * @param boolean $has_garden
      */
-    public function setHasGarden($has_garden) {
+    public function setGarden($has_garden) {
         $this->has_garden = $has_garden;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasGarden() {
+    public function hasGarden() {
         return $this->has_garden;
     }
 
     /**
-     * @param mixed $has_gated_entry
+     * @param boolean $has_gated_entry
      */
-    public function setHasGatedEntry($has_gated_entry) {
+    public function setGatedEntry($has_gated_entry) {
         $this->has_gated_entry = $has_gated_entry;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasGatedEntry() {
+    public function hasGatedEntry() {
         return $this->has_gated_entry;
     }
 
     /**
-     * @param mixed $has_greenhouse
+     * @param boolean $has_greenhouse
      */
-    public function setHasGreenhouse($has_greenhouse) {
+    public function setGreenhouse($has_greenhouse) {
         $this->has_greenhouse = $has_greenhouse;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasGreenhouse() {
+    public function hasGreenhouse() {
         return $this->has_greenhouse;
     }
 
     /**
-     * @param mixed $has_handrails
+     * @param boolean $has_handrails
      */
-    public function setHasHandrails($has_handrails) {
+    public function setHandrails($has_handrails) {
         $this->has_handrails = $has_handrails;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasHandrails() {
+    public function hasHandrails() {
         return $this->has_handrails;
     }
 
     /**
-     * @param mixed $has_hot_tub_spa
+     * @param boolean $has_hot_tub_spa
      */
-    public function setHasHotTubSpa($has_hot_tub_spa) {
+    public function setHotTubSpa($has_hot_tub_spa) {
         $this->has_hot_tub_spa = $has_hot_tub_spa;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasHotTubSpa() {
+    public function hasHotTubSpa() {
         return $this->has_hot_tub_spa;
     }
 
     /**
-     * @param mixed $has_intercom
+     * @param boolean $has_intercom
      */
-    public function setHasIntercom($has_intercom) {
+    public function setIntercom($has_intercom) {
         $this->has_intercom = $has_intercom;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasIntercom() {
+    public function hasIntercom() {
         return $this->has_intercom;
     }
 
     /**
-     * @param mixed $has_jetted_bath_tub
+     * @param boolean $has_jetted_bath_tub
      */
-    public function setHasJettedBathTub($has_jetted_bath_tub) {
+    public function setJettedBathTub($has_jetted_bath_tub) {
         $this->has_jetted_bath_tub = $has_jetted_bath_tub;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasJettedBathTub() {
+    public function hasJettedBathTub() {
         return $this->has_jetted_bath_tub;
     }
 
     /**
-     * @param mixed $has_lawn
+     * @param boolean $has_lawn
      */
-    public function setHasLawn($has_lawn) {
+    public function setLawn($has_lawn) {
         $this->has_lawn = $has_lawn;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasLawn() {
+    public function hasLawn() {
         return $this->has_lawn;
     }
 
     /**
-     * @param mixed $has_mother_in_law
+     * @param boolean $has_mother_in_law
      */
-    public function setHasMotherInLaw($has_mother_in_law) {
+    public function setMotherInLaw($has_mother_in_law) {
         $this->has_mother_in_law = $has_mother_in_law;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasMotherInLaw() {
+    public function hasMotherInLaw() {
         return $this->has_mother_in_law;
     }
 
     /**
-     * @param mixed $has_patio
+     * @param boolean $has_patio
      */
-    public function setHasPatio($has_patio) {
+    public function setPatio($has_patio) {
         $this->has_patio = $has_patio;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPatio() {
+    public function hasPatio() {
         return $this->has_patio;
     }
 
     /**
-     * @param mixed $has_pond
+     * @param boolean $has_pond
      */
-    public function setHasPond($has_pond) {
+    public function setPond($has_pond) {
         $this->has_pond = $has_pond;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPond() {
+    public function hasPond() {
         return $this->has_pond;
     }
 
     /**
-     * @param mixed $has_pool
+     * @param boolean $has_pool
      */
-    public function setHasPool($has_pool) {
+    public function setPool($has_pool) {
         $this->has_pool = $has_pool;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPool() {
+    public function hasPool() {
         return $this->has_pool;
     }
 
     /**
-     * @param mixed $has_porch
+     * @param boolean $has_porch
      */
-    public function setHasPorch($has_porch) {
+    public function setPorch($has_porch) {
         $this->has_porch = $has_porch;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPorch() {
+    public function hasPorch() {
         return $this->has_porch;
     }
 
     /**
-     * @param mixed $has_private_balcony
+     * @param boolean $has_private_balcony
      */
-    public function setHasPrivateBalcony($has_private_balcony) {
+    public function setPrivateBalcony($has_private_balcony) {
         $this->has_private_balcony = $has_private_balcony;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPrivateBalcony() {
+    public function hasPrivateBalcony() {
         return $this->has_private_balcony;
     }
 
     /**
-     * @param mixed $has_private_patio
+     * @param boolean $has_private_patio
      */
-    public function setHasPrivatePatio($has_private_patio) {
+    public function setPrivatePatio($has_private_patio) {
         $this->has_private_patio = $has_private_patio;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasPrivatePatio() {
+    public function hasPrivatePatio() {
         return $this->has_private_patio;
     }
 
     /**
-     * @param mixed $has_rv_parking
+     * @param boolean $has_rv_parking
      */
-    public function setHasRvParking($has_rv_parking) {
+    public function setRvParking($has_rv_parking) {
         $this->has_rv_parking = $has_rv_parking;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasRvParking() {
+    public function hasRvParking() {
         return $this->has_rv_parking;
     }
 
     /**
-     * @param mixed $has_sauna
+     * @param boolean $has_sauna
      */
-    public function setHasSauna($has_sauna) {
+    public function setSauna($has_sauna) {
         $this->has_sauna = $has_sauna;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasSauna() {
+    public function hasSauna() {
         return $this->has_sauna;
     }
 
     /**
-     * @param mixed $has_security_system
+     * @param boolean $has_security_system
      */
-    public function setHasSecuritySystem($has_security_system) {
+    public function setSecuritySystem($has_security_system) {
         $this->has_security_system = $has_security_system;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasSecuritySystem() {
+    public function hasSecuritySystem() {
         return $this->has_security_system;
     }
 
     /**
-     * @param mixed $has_skylight
+     * @param boolean $has_skylight
      */
-    public function setHasSkylight($has_skylight) {
+    public function setSkylight($has_skylight) {
         $this->has_skylight = $has_skylight;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasSkylight() {
+    public function hasSkylight() {
         return $this->has_skylight;
     }
 
     /**
-     * @param mixed $has_sportscourt
+     * @param boolean $has_sportscourt
      */
-    public function setHasSportscourt($has_sportscourt) {
+    public function setSportscourt($has_sportscourt) {
         $this->has_sportscourt = $has_sportscourt;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasSportscourt() {
+    public function hasSportscourt() {
         return $this->has_sportscourt;
     }
 
     /**
-     * @param mixed $has_sprinkler_system
+     * @param boolean $has_sprinkler_system
      */
-    public function setHasSprinklerSystem($has_sprinkler_system) {
+    public function setSprinklerSystem($has_sprinkler_system) {
         $this->has_sprinkler_system = $has_sprinkler_system;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasSprinklerSystem() {
+    public function hasSprinklerSystem() {
         return $this->has_sprinkler_system;
     }
 
     /**
-     * @param mixed $has_terrace
+     * @param boolean $has_terrace
      */
-    public function setHasTerrace($has_terrace) {
+    public function setTerrace($has_terrace) {
         $this->has_terrace = $has_terrace;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasTerrace() {
+    public function hasTerrace() {
         return $this->has_terrace;
     }
 
     /**
-     * @param mixed $has_vaulted_ceiling
+     * @param boolean $has_vaulted_ceiling
      */
-    public function setHasVaultedCeiling($has_vaulted_ceiling) {
+    public function setVaultedCeiling($has_vaulted_ceiling) {
         $this->has_vaulted_ceiling = $has_vaulted_ceiling;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasVaultedCeiling() {
+    public function hasVaultedCeiling() {
         return $this->has_vaulted_ceiling;
     }
 
     /**
-     * @param mixed $has_view
+     * @param boolean $has_view
      */
-    public function setHasView($has_view) {
+    public function setView($has_view) {
         $this->has_view = $has_view;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasView() {
+    public function hasView() {
         return $this->has_view;
     }
 
     /**
-     * @param mixed $has_washer_dryer_hookup
+     * @param boolean $has_washer_dryer_hookup
      */
-    public function setHasWasherDryerHookup($has_washer_dryer_hookup) {
+    public function setWasherDryerHookup($has_washer_dryer_hookup) {
         $this->has_washer_dryer_hookup = $has_washer_dryer_hookup;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasWasherDryerHookup() {
+    public function hasWasherDryerHookup() {
         return $this->has_washer_dryer_hookup;
     }
 
     /**
-     * @param mixed $has_wet_bar
+     * @param boolean $has_wet_bar
      */
-    public function setHasWetBar($has_wet_bar) {
+    public function setWetBar($has_wet_bar) {
         $this->has_wet_bar = $has_wet_bar;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasWetBar() {
+    public function hasWetBar() {
         return $this->has_wet_bar;
     }
 
     /**
-     * @param mixed $has_window_coverings
+     * @param boolean $has_window_coverings
      */
-    public function setHasWindowCoverings($has_window_coverings) {
+    public function setWindowCoverings($has_window_coverings) {
         $this->has_window_coverings = $has_window_coverings;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getHasWindowCoverings() {
+    public function hasWindowCoverings() {
         return $this->has_window_coverings;
     }
 
@@ -846,30 +851,30 @@ class DetailedCharacteristics extends Element {
     }
 
     /**
-     * @param mixed $is_new_construction
+     * @param boolean $is_new_construction
      */
-    public function setIsNewConstruction($is_new_construction) {
+    public function setNewConstruction($is_new_construction) {
         $this->is_new_construction = $is_new_construction;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getIsNewConstruction() {
+    public function isNewConstruction() {
         return $this->is_new_construction;
     }
 
     /**
-     * @param mixed $is_waterfront
+     * @param boolean $is_waterfront
      */
-    public function setIsWaterfront($is_waterfront) {
+    public function setWaterfront($is_waterfront) {
         $this->is_waterfront = $is_waterfront;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getIsWaterfront() {
+    public function isWaterfront() {
         return $this->is_waterfront;
     }
 
@@ -919,14 +924,14 @@ class DetailedCharacteristics extends Element {
     }
 
     /**
-     * @param mixed $parking_space_fee
+     * @param ParkingSpaceFee $parking_space_fee
      */
-    public function setParkingSpaceFee($parking_space_fee) {
+    public function setParkingSpaceFee(ParkingSpaceFee $parking_space_fee) {
         $this->parking_space_fee = $parking_space_fee;
     }
 
     /**
-     * @return mixed
+     * @return ParkingSpaceFee
      */
     public function getParkingSpaceFee() {
         return $this->parking_space_fee;

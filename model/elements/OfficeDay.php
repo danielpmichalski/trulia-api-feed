@@ -1,5 +1,6 @@
 <?php
 include_once(MODEL_ROOT . '/elements/Element.php');
+include_once(MODEL_ROOT . '/enums/DayOfTheWeek.php');
 
 class OfficeDay extends Element {
     private $day_of_the_week;
@@ -22,14 +23,14 @@ class OfficeDay extends Element {
     }
 
     /**
-     * @param mixed $day_of_the_week
+     * @param DayOfTheWeek $day_of_the_week
      */
-    public function setDayOfTheWeek($day_of_the_week) {
+    public function setDayOfTheWeek(DayOfTheWeek $day_of_the_week) {
         $this->day_of_the_week = $day_of_the_week;
     }
 
     /**
-     * @return mixed
+     * @return DayOfTheWeek
      */
     public function getDayOfTheWeek() {
         return $this->day_of_the_week;

@@ -18,31 +18,73 @@ class Agent extends Element {
     }
 
     /**
-     * @param mixed $agent_alternate_email
+     * @param String $agent_name
      */
-    public function setAlternateEmail($agent_alternate_email) {
-        $this->alternate_email = $agent_alternate_email;
+    public function setName($agent_name) {
+        $this->name = $agent_name;
     }
 
     /**
-     * @return mixed
+     * @return String
      */
-    public function getAlternateEmail() {
-        return $this->alternate_email;
+    public function getName() {
+        return $this->name;
     }
 
     /**
-     * @param mixed $agent_email
+     * @param String $agent_email
      */
     public function setEmail($agent_email) {
         $this->email = $agent_email;
     }
 
     /**
-     * @return mixed
+     * @return String
      */
     public function getEmail() {
         return $this->email;
+    }
+
+    /**
+     * @param String $agent_phone
+     */
+    public function setPhone($agent_phone) {
+        $this->phone = $agent_phone;
+    }
+
+    /**
+     * @return String
+     */
+    public function getPhone() {
+        return $this->phone;
+    }
+
+    /**
+     * @param String $agent_alternate_email
+     */
+    public function setAlternateEmail($agent_alternate_email) {
+        $this->alternate_email = $agent_alternate_email;
+    }
+
+    /**
+     * @return String
+     */
+    public function getAlternateEmail() {
+        return $this->alternate_email;
+    }
+
+    /**
+     * @param String $agent_picture_url
+     */
+    public function setPictureUrl($agent_picture_url) {
+        $this->picture_url = $agent_picture_url;
+    }
+
+    /**
+     * @return String
+     */
+    public function getPictureUrl() {
+        return $this->picture_url;
     }
 
     /**
@@ -74,47 +116,5 @@ class Agent extends Element {
             $this->licenses = new AgentLicenses(new AgentLicense());
         }
         return $this->licenses->getAll();
-    }
-
-    /**
-     * @param mixed $agent_name
-     */
-    public function setName($agent_name) {
-        $this->name = $agent_name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName() {
-        return $this->name;
-    }
-
-    /**
-     * @param mixed $agent_phone
-     */
-    public function setPhone($agent_phone) {
-        $this->phone = $agent_phone;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPhone() {
-        return $this->phone;
-    }
-
-    /**
-     * @param mixed $agent_picture_url
-     */
-    public function setPictureUrl($agent_picture_url) {
-        $this->picture_url = $agent_picture_url;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPictureUrl() {
-        return $this->picture_url;
     }
 } 
