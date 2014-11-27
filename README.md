@@ -15,8 +15,7 @@ $landing_page = new LandingPage("http://winterfell.com/");
 
 $agent = new Agent("John Snow", "john.snow@winterfell.com");
 
-$property = new Property(new ListingType(ListingType::RENTAL), new Status(Status::FOR_RENT), 
-                         $location, $details, $landing_page, $agent);
+$property = new Property(new ListingType(ListingType::RENTAL), new Status(Status::FOR_RENT), $location, $details, $landing_page, $agent);
 
 $feed_builder = TruliaFeedBuilderFactory::createBuilder();
 
